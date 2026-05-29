@@ -63,11 +63,29 @@ else
 fi
 
 # Verificar diretório de origem
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Quando executado via "curl | bash", BASH_SOURCE[0] é vazio — clonar o repo
+REPO_URL="https://github.com/ricardonevesbraga/flowgrammers-skills.git"
+CLONED=false
+
+if [ -n "${BASH_SOURCE[0]:-}" ] && [ "${BASH_SOURCE[0]}" != "bash" ]; then
+  SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+else
+  # Modo pipe: clonar em diretório temporário
+  SCRIPT_DIR="$(mktemp -d)"
+  echo -e "${BLUE}▶ Modo curl|bash detectado — clonando repositório...${NC}"
+  if command -v git &> /dev/null; then
+    git clone --depth 1 "$REPO_URL" "$SCRIPT_DIR" 2>&1 | grep -v "^$" | sed 's/^/  /'
+    CLONED=true
+  else
+    echo -e "  ${RED}✗ git não encontrado. Instale o git e tente novamente.${NC}"
+    exit 1
+  fi
+fi
+
 echo -e "${BLUE}▶ Origem das skills:${NC} $SCRIPT_DIR"
 
 # Verificar se há SKILL.md files
-SKILL_COUNT=$(find "$SCRIPT_DIR" -name "SKILL.md" | wc -l | tr -d ' ')
+SKILL_COUNT=$(find "$SCRIPT_DIR" -name "SKILL.md" -not -path "*/.git/*" | wc -l | tr -d ' ')
 if [ "$SKILL_COUNT" -eq 0 ]; then
   echo -e "  ${RED}✗ Nenhum arquivo SKILL.md encontrado em $SCRIPT_DIR${NC}"
   echo -e "    Certifique-se de executar este script na pasta raiz do projeto."
@@ -258,3 +276,8 @@ echo "────────────────────────�
 echo -e "  ${BOLD}Flowgrammers${NC} — flowgrammers.com.br"
 echo "────────────────────────────────────────────────────"
 echo ""
+
+# Limpeza do clone temporário
+if [ "$CLONED" = true ]; then
+  rm -rf "$SCRIPT_DIR"
+fi
