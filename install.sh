@@ -18,7 +18,6 @@ NC='\033[0m'
 
 SKILLS_DIR="$HOME/.claude/skills"
 COMMANDS_DIR="$HOME/.claude/commands"
-CLAUDE_MD="$HOME/.claude/CLAUDE.md"
 
 # Banner
 echo ""
@@ -55,7 +54,7 @@ else
   echo -e "  ${YELLOW}⚠${NC}  Claude Code não encontrado no PATH"
   echo -e "     Para instalar: ${CYAN}npm install -g @anthropic-ai/claude-code${NC}"
   echo ""
-  read -p "  Continuar mesmo assim? (s/N): " CONTINUE
+  read -p "  Continuar mesmo assim? (s/N): " CONTINUE < /dev/tty 2>/dev/null || CONTINUE=""
   if [[ ! "$CONTINUE" =~ ^[Ss]$ ]]; then
     echo -e "  ${RED}Instalação cancelada.${NC}"
     exit 1
@@ -99,11 +98,11 @@ echo -e "${BOLD}  O instalador vai:${NC}"
 echo ""
 echo -e "  📁 Copiar skills para:   ${CYAN}~/.claude/skills/${NC}"
 echo -e "  ⚡ Instalar comandos em: ${CYAN}~/.claude/commands/${NC}"
-echo -e "  📄 Configurar:          ${CYAN}~/.claude/CLAUDE.md${NC}"
+echo -e "  📄 CLAUDE.md global:    ${CYAN}mantido intacto${NC}"
 echo ""
 echo "────────────────────────────────────────────────────"
 echo ""
-read -p "  Confirmar instalação? (S/n): " CONFIRM
+read -p "  Confirmar instalação? (S/n): " CONFIRM < /dev/tty 2>/dev/null || CONFIRM=""
 if [[ "$CONFIRM" =~ ^[Nn]$ ]]; then
   echo -e "  ${YELLOW}Instalação cancelada.${NC}"
   exit 0
@@ -153,39 +152,8 @@ else
 fi
 
 # ─── CONFIGURAR CLAUDE.MD ──────────────────────────────
-echo -e "${BLUE}▶ Configurando CLAUDE.md global...${NC}"
-
-mkdir -p "$HOME/.claude"
-
-# Verificar se já tem bloco Flowgrammers
-if [ -f "$CLAUDE_MD" ] && grep -q "Flowgrammers Skills" "$CLAUDE_MD" 2>/dev/null; then
-  echo -e "  ${YELLOW}⚠${NC}  CLAUDE.md já contém configuração Flowgrammers — mantendo"
-else
-  cat >> "$CLAUDE_MD" << 'EOF'
-
-## Flowgrammers Skills
-
-Skills de IA especializadas disponíveis em ~/.claude/skills/.
-Para usar qualquer skill, peça ao Claude em linguagem natural:
-
-  "Use a skill de CEO Advisor em ~/.claude/skills/c-level-advisor/ceo-advisor/SKILL.md"
-  "Leia a skill de RAG Architect em ~/.claude/skills/engineering/rag-architect/SKILL.md"
-  "Ative a skill de Paid Ads em ~/.claude/skills/marketing-skill/paid-ads/SKILL.md"
-
-**Domínios disponíveis:**
-- c-level-advisor/     → CEO, CTO, CFO, CMO, COO, CPO, CRO, CISO, CHRO
-- engineering/         → RAG, MCP, CI/CD, Database, Docker, Terraform, Performance
-- engineering-team/    → Frontend, Backend, DevOps, QA, Security, ML, Data
-- marketing-skill/     → SEO, Paid Ads, CRO, Content, Email, Social
-- product-team/        → PM, PO, UX, UI, Analytics, Strategy
-- business-growth/     → Customer Success, Sales, Revenue Ops, Contratos BR
-- project-management/  → PM Sênior, Scrum, Jira, Confluence
-- finance/             → Análise Financeira, SaaS Metrics, Investimentos
-- ra-qm-team/          → LGPD, ISO 13485, ISO 27001, ANVISA, SOC2, CAPA
-- skills-brasileiras/  → Copy, Marketing exclusivo para o Brasil
-EOF
-  echo -e "  ${GREEN}✓${NC} CLAUDE.md configurado"
-fi
+# Não modifica o CLAUDE.md global do usuário para preservar configurações existentes
+echo -e "${BLUE}▶ CLAUDE.md global:${NC} mantido intacto (não modificado)"
 
 # ─── CRIAR ATALHO DE SKILLS ────────────────────────────
 echo -e "${BLUE}▶ Criando guia de skills...${NC}"
