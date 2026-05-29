@@ -6,7 +6,7 @@
 [![Plataformas](https://img.shields.io/badge/plataformas-Claude%20·%20Cursor%20·%20Codex%20·%20Windsurf-00e8d0.svg)](#como-usar)
 [![Version](https://img.shields.io/badge/version-2.2.0-00e8d0.svg)](CHANGELOG.md)
 
-> **383 skills + 29 comandos slash prontos para produção**
+> **401 skills + 30 comandos slash prontos para produção**
 > Contexto 100% brasileiro · Multi-plataforma · Claude Code, Cursor, Codex, Windsurf, OpenClaw
 
 > 📊 **Veja a apresentação visual completa:** abra [`SKILLS-portavel.html`](SKILLS-portavel.html) no navegador.
