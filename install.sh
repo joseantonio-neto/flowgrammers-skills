@@ -54,7 +54,8 @@ else
   echo -e "  ${YELLOW}⚠${NC}  Claude Code não encontrado no PATH"
   echo -e "     Para instalar: ${CYAN}npm install -g @anthropic-ai/claude-code${NC}"
   echo ""
-  read -p "  Continuar mesmo assim? (s/N): " CONTINUE < /dev/tty 2>/dev/null || CONTINUE=""
+  printf "  Continuar mesmo assim? (s/N): " > /dev/tty
+  read CONTINUE < /dev/tty 2>/dev/null || CONTINUE=""
   if [[ ! "$CONTINUE" =~ ^[Ss]$ ]]; then
     echo -e "  ${RED}Instalação cancelada.${NC}"
     exit 1
@@ -102,7 +103,8 @@ echo -e "  📄 CLAUDE.md global:    ${CYAN}mantido intacto${NC}"
 echo ""
 echo "────────────────────────────────────────────────────"
 echo ""
-read -p "  Confirmar instalação? (S/n): " CONFIRM < /dev/tty 2>/dev/null || CONFIRM=""
+printf "  Confirmar instalação? (S/n): " > /dev/tty
+read CONFIRM < /dev/tty 2>/dev/null || CONFIRM=""
 if [[ "$CONFIRM" =~ ^[Nn]$ ]]; then
   echo -e "  ${YELLOW}Instalação cancelada.${NC}"
   exit 0
