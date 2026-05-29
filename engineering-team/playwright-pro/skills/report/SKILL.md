@@ -3,7 +3,6 @@ name: "report"
 description: >-
   Gerar relatório de testes. Use quando o usuário disser "relatório de testes", "resumo de resultados",
   "status dos testes", "mostrar resultados", "painel de testes" ou "como foram os testes".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

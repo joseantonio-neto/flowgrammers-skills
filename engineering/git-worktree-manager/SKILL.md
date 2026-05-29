@@ -1,7 +1,6 @@
 ---
 name: "git-worktree-manager"
 description: "Gerenciador de Git Worktree — executa trabalho paralelo em funcionalidades com segurança usando worktrees Git, com isolamento de branch, alocação de porta, sincronização de ambiente e limpeza padronizados."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

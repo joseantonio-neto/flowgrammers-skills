@@ -18,6 +18,9 @@ Icon
 # Claude Code local cache
 .claude/
 
+# Instruções privadas do Claude Code (não versionadas)
+CLAUDE.md
+
 # Logs
 *.log
 npm-debug.log*

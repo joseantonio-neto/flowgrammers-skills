@@ -1,7 +1,6 @@
 ---
 name: "snowflake-development"
 description: "Use quando escrever SQL Snowflake, construir pipelines de dados com Dynamic Tables ou Streams/Tasks, usar funções Cortex AI, criar Cortex Agents, escrever Snowpark Python, configurar dbt para Snowflake ou solucionar problemas de erros Snowflake."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

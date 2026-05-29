@@ -1,7 +1,6 @@
 ---
 name: "financial-analyst"
 description: Realiza análise de índices financeiros, avaliação DCF, análise de variação orçamentária e construção de previsões contínuas para tomada de decisões estratégicas. Use ao analisar demonstrações financeiras, construir modelos de avaliação, avaliar variações orçamentárias, ou construir projeções financeiras e previsões. Também aplicável quando os usuários mencionarem modelagem financeira, análise de fluxo de caixa, avaliação de empresa, projeções financeiras, or análise de planilhas.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

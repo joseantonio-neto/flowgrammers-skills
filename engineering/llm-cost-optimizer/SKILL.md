@@ -1,7 +1,6 @@
 ---
 name: llm-cost-optimizer
 description: "Use quando você precisa reduzir os gastos com API de LLM, controlar o uso de tokens, rotear entre modelos por custo/qualidade, implementar cache de prompts ou construir observabilidade de custos para features de IA. Gatilhos: 'meus custos de IA estão muito altos', 'otimizar uso de tokens', 'qual modelo devo usar', 'gastos com LLM fora de controle', 'implementar cache de prompts'. NÃO para design de pipeline RAG (use rag-architect). NÃO para qualidade de escrita de prompts (use senior-prompt-engineer)."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

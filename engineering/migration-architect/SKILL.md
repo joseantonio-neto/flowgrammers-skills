@@ -1,7 +1,6 @@
 ---
 name: "migration-architect"
 description: "Arquiteto de Migração. Planejamento de migração com zero downtime, validação de compatibilidade e geração de estratégia de rollback."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,7 +1,6 @@
 ---
 name: "extract"
 description: "Transformar um padrão comprovado ou solução de debugging em uma skill standalone reutilizável com SKILL.md, documentação de referência e exemplos."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

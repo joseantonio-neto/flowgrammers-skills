@@ -2,7 +2,6 @@
 name: "pm-skills"
 description: "6 skills de gerenciamento de projetos para Claude Code. Senior PM, scrum master, especialista em Jira (JQL), especialista em Confluence, administrador Atlassian e criador de templates. Integração MCP para automação ao vivo no Jira/Confluence."
 version: 1.0.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags:
   - project-management

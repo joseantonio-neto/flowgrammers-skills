@@ -1,7 +1,6 @@
 ---
 name: "email-template-builder"
 description: "Construtor de templates de e-mail transacional. Cria sistemas completos de e-mail com React Email, integração com provedores, servidor de preview, suporte a i18n, modo escuro, otimização anti-spam e rastreamento de analytics. Produz código pronto para produção para Resend, Postmark, SendGrid ou AWS SES."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

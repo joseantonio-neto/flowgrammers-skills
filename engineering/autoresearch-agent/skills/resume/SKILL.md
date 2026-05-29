@@ -2,7 +2,6 @@
 name: "resume"
 description: "Retomar um experimento pausado. Faz checkout do branch do experimento, lê o histórico de resultados e continua iterando."
 command: /ar:resume
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

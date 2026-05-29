@@ -1,7 +1,6 @@
 ---
 name: statistical-analyst
 description: Execute testes de hipótese, analise resultados de experimentos A/B, calcule tamanhos de amostra e interprete significância estatística com tamanhos de efeito. Use quando precisar validar se diferenças observadas são reais, dimensionar um experimento corretamente antes do lançamento, ou interpretar resultados de testes com confiança.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

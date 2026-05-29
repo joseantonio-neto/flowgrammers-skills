@@ -2,7 +2,6 @@
 name: "eval"
 description: "Avaliar e classificar resultados dos agentes por métrica ou juiz LLM para uma sessão do AgentHub."
 command: /hub:eval
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -2,7 +2,6 @@
 name: "engineering-advanced-skills"
 description: "25 skills e plugins avançados de engenharia para Claude Code. Design de agentes, RAG, servidores MCP, CI/CD, design de banco de dados, observabilidade, auditoria de segurança e gerenciamento de releases."
 version: 1.1.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags:
   - engineering

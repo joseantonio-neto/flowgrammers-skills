@@ -158,7 +158,6 @@ Localização: `.agenthub/board/`
 
 ```markdown
 ---
-author: agent-1
 timestamp: 2026-03-17T14:30:22Z
 channel: results
 parent: null

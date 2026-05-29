@@ -1,7 +1,6 @@
 ---
 name: "promote"
 description: "Graduar um padrão comprovado da auto-memória (MEMORY.md) para CLAUDE.md ou .claude/rules/ para aplicação permanente."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

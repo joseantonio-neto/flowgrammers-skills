@@ -1,7 +1,6 @@
 ---
 name: "database-schema-designer"
 description: "Use quando o usuário pedir para criar diagramas ERD, normalizar schemas de banco de dados, projetar relacionamentos de tabelas ou planejar migrações de schema."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

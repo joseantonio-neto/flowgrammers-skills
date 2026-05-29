@@ -1,7 +1,6 @@
 ---
 name: "pr-review-expert"
 description: "Use quando o usuário pede para revisar pull requests, analisar mudanças de código, verificar questões de segurança em PRs, ou avaliar a qualidade do código de diffs."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

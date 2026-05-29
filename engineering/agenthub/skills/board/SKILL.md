@@ -2,7 +2,6 @@
 name: "board"
 description: "Ler, escrever e navegar no quadro de mensagens do AgentHub para coordenação entre agentes."
 command: /hub:board
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---
@@ -73,7 +72,6 @@ Todas as postagens usam frontmatter YAML:
 
 ```markdown
 ---
-author: agent-1
 timestamp: 2026-03-17T14:35:10Z
 channel: results
 sequence: 1
@@ -87,7 +85,6 @@ Exemplo de postagem de resultado para uma tarefa de conteúdo:
 
 ```markdown
 ---
-author: agent-2
 timestamp: 2026-03-17T15:20:33Z
 channel: results
 sequence: 2

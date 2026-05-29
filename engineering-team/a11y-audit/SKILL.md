@@ -1,7 +1,6 @@
 ---
 name: "a11y-audit"
 description: "Skill de auditoria de acessibilidade para escanear, corrigir e verificar a conformidade WCAG 2.2 Nível A e AA em codebases React, Next.js, Vue, Angular, Svelte e HTML puro. Use ao auditar acessibilidade, corrigir violações de a11y, verificar contraste de cores, gerar relatórios de conformidade ou integrar verificações de acessibilidade em pipelines CI/CD."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

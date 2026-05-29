@@ -1,7 +1,6 @@
 ---
 name: "interview-system-designer"
 description: "Esta skill deve ser usada quando o usuário pedir para 'projetar processos de entrevista', 'criar pipelines de contratação', 'calibrar loops de entrevista', 'gerar perguntas de entrevista', 'projetar matrizes de competência', 'analisar viés do entrevistador', 'criar rubricas de pontuação', 'construir bancos de perguntas' ou 'otimizar sistemas de contratação'. Use para projetar loops de entrevista específicos por função, avaliações de competência e sistemas de calibração de contratação."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

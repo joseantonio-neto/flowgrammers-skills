@@ -1,7 +1,6 @@
 ---
 name: "release-manager"
 description: "Use quando o usuário pede para planejar releases, gerenciar changelogs, coordenar implantações, criar branches de release ou automatizar versionamento."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

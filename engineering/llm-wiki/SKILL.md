@@ -3,7 +3,6 @@ name: llm-wiki
 description: Use quando estiver construindo ou mantendo uma base de conhecimento pessoal persistente (segundo cérebro) no Obsidian, onde um LLM ingere fontes de forma incremental, atualiza páginas de entidades/conceitos, mantém referências cruzadas e mantém uma síntese atualizada. Gatilhos incluem "segundo cérebro", "wiki no Obsidian", "gestão de conhecimento pessoal", "ingerir este paper/artigo/livro", "construir um wiki de pesquisa", "conhecimento acumulado", "Memex", ou sempre que o usuário quiser que o conhecimento se acumule entre sessões em vez de ser redescoberto por RAG a cada consulta.
 context: fork
 version: 1.0.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags: [knowledge-management, obsidian, second-brain, pkm, rag-alternative, wiki, karpathy, memex]
 agents:

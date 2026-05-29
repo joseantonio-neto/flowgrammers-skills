@@ -1,64 +1,64 @@
 ---
 name: wiki-log
-description: Show recent entries from the LLM Wiki log (wiki/log.md). Uses the standardized ## [YYYY-MM-DD] header format so grep + tail works. Usage /wiki-log [--last N] [--op ingest|query|lint|...]
+description: Exibe entradas recentes do log do LLM Wiki (wiki/log.md). Usa o formato padrão de cabeçalho ## [AAAA-MM-DD] para que grep + tail funcionem. Uso: /wiki-log [--last N] [--op ingest|query|lint|...]
 ---
 
 # /wiki-log
 
-Show recent entries from `wiki/log.md`. Every LLM operation on the wiki leaves a standardized entry:
+Exibe entradas recentes de `wiki/log.md`. Cada operação LLM no wiki deixa uma entrada padronizada:
 
 ```
-## [YYYY-MM-DD] <op> | <title>
-<optional detail>
+## [AAAA-MM-DD] <operação> | <título>
+<detalhe opcional>
 ```
 
-## Usage
+## Uso
 
 ```
-/wiki-log                            # last 10 entries
+/wiki-log                            # últimas 10 entradas
 /wiki-log --last 20
-/wiki-log --op ingest --last 10      # only ingest entries
-/wiki-log --op lint                  # recent lint passes
+/wiki-log --op ingest --last 10      # apenas entradas de ingestão
+/wiki-log --op lint                  # verificações de lint recentes
 /wiki-log --since 2026-04-01
 ```
 
-## What it does
+## O que faz
 
-Parses `wiki/log.md` and prints matching entries. No LLM involvement needed — this is essentially:
+Processa `wiki/log.md` e exibe as entradas correspondentes. Não há envolvimento do LLM — equivale essencialmente a:
 
 ```bash
 grep "^## \[" wiki/log.md | tail -N
 ```
 
-…plus optional filters for op type and date range.
+…mais filtros opcionais por tipo de operação e intervalo de datas.
 
-## Valid ops
+## Operações válidas
 
-- `ingest` — a source was read and integrated
-- `query` — a question was answered (when filed back)
-- `lint` — a health check ran
-- `create` — a new page was created outside an ingest
-- `update` — a page was updated outside an ingest
-- `delete` — a page was removed
-- `note` — freeform note (contradictions flagged, thesis revisions, etc.)
+- `ingest` — uma fonte foi lida e integrada
+- `query` — uma pergunta foi respondida (quando registrada de volta)
+- `lint` — uma verificação de saúde foi executada
+- `create` — uma nova página foi criada fora de uma ingestão
+- `update` — uma página foi atualizada fora de uma ingestão
+- `delete` — uma página foi removida
+- `note` — nota livre (contradições sinalizadas, revisões de tese, etc.)
 
-## Example output
+## Exemplo de saída
 
 ```
-## [2026-04-11] lint | weekly health check
-3 contradictions, 12 orphans, 2 broken links. Fixed broken links; left contradictions for next session.
+## [2026-04-11] lint | verificação semanal de saúde
+3 contradições, 12 órfãos, 2 links quebrados. Links corrigidos; contradições deixadas para a próxima sessão.
 
 ## [2026-04-10] ingest | Anthropic Monosemanticity
-Added sources/monosemanticity.md. Updated concepts/sparse-autoencoder, concepts/polysemanticity, entities/anthropic.
+Adicionado sources/monosemanticity.md. Atualizados concepts/sparse-autoencoder, concepts/polysemanticity, entities/anthropic.
 
 ## [2026-04-09] query | SAE vs probing
-Filed back to comparisons/sae-vs-probing.md.
+Registrado de volta em comparisons/sae-vs-probing.md.
 ```
 
 ## Scripts
 
-- Uses `grep` + `tail` directly on `wiki/log.md`. No dedicated script needed; that's the point of the standardized header format.
+- Usa `grep` + `tail` diretamente em `wiki/log.md`. Nenhum script dedicado é necessário; esse é o propósito do formato padronizado de cabeçalho.
 
-## Skill Reference
+## Referência de Skill
 
 → `engineering/llm-wiki/SKILL.md`

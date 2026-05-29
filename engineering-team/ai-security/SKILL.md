@@ -1,7 +1,6 @@
 ---
 name: "ai-security"
 description: "Use ao avaliar sistemas de IA/ML para injeção de prompt, vulnerabilidades de jailbreak, risco de inversão de modelo, exposição a envenenamento de dados ou abuso de ferramentas por agents. Cobre mapeamento de técnicas MITRE ATLAS, detecção de assinaturas de injeção e pontuação de robustez adversarial."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

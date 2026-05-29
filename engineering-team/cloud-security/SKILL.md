@@ -1,7 +1,6 @@
 ---
 name: "cloud-security"
 description: "Use ao avaliar infraestrutura de nuvem para configurações incorretas de segurança, caminhos de escalada de privilégio IAM, exposição pública de S3, regras de grupo de segurança abertas ou lacunas de segurança em IaC. Cobre avaliação de postura em AWS, Azure e GCP com mapeamento MITRE ATT&CK."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

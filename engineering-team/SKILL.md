@@ -2,7 +2,6 @@
 name: "engineering-skills"
 description: "23 skills de engenharia prontas para produção para Claude Code. Arquitetura, frontend, backend, QA, DevOps, segurança, IA/ML, engenharia de dados, Playwright, Stripe, AWS, MS365. ferramentas Node.js, TypeScript e scripts utilitários."
 version: 1.1.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags:
   - engineering

@@ -1,7 +1,6 @@
 ---
 name: "rag-architect"
 description: "Use quando o usuário pede para projetar pipelines RAG, otimizar estratégias de recuperação, escolher modelos de embedding, implementar busca vetorial ou construir sistemas de recuperação de conhecimento."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

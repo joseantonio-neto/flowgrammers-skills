@@ -2,7 +2,6 @@
 name: saas-metrics-coach
 description: Consultor de saúde financeira SaaS. Use quando o usuário compartilhar números de receita ou clientes, ou mencionar ARR, MRR, churn, LTV, CAC, NRR, ou perguntar como seu negócio SaaS está indo.
 license: MIT
-author: Ric Neves - Flowgrammers
 metadata:
   version: 1.0.0
   category: finance

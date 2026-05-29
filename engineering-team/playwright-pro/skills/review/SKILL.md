@@ -4,7 +4,6 @@ description: >-
   Revisar testes Playwright para qualidade. Use quando o usuário disser "revisar testes",
   "verificar qualidade dos testes", "auditar testes", "melhorar testes", "revisão de código de testes"
   ou "verificação de melhores práticas do Playwright".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

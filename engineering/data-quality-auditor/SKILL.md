@@ -1,7 +1,6 @@
 ---
 name: data-quality-auditor
 description: Audite conjuntos de dados quanto à completude, consistência, precisão e validade. Perfil de distribuições de dados, detecção de anomalias e outliers, identificação de problemas estruturais e produção de um plano de remediação acionável.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

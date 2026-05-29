@@ -1,7 +1,6 @@
 ---
 name: "runbook-generator"
 description: "Gerador de Runbook. Gera runbooks operacionais rapidamente a partir do nome do serviço e personaliza para fluxos de trabalho de implantação, resposta a incidentes, manutenção e rollback."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

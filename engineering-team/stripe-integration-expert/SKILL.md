@@ -1,7 +1,6 @@
 ---
 name: "stripe-integration-expert"
 description: "Especialista em Integração Stripe para implementar integrações Stripe em nível de produção: assinaturas com trials e proration, pagamentos únicos, billing baseado em uso, checkout sessions, handlers de webhook idempotentes, portal do cliente e faturamento. Cobre padrões Next.js, Express e Django."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,21 +1,21 @@
 ---
 name: tdd
-description: Generate tests, analyze coverage, and run TDD workflows. Usage: /tdd <generate|coverage|validate> [options]
+description: Gera testes, analisa cobertura e executa fluxos de TDD. Uso: /tdd <generate|coverage|validate> [opções]
 ---
 
 # /tdd
 
-Generate tests, analyze coverage, and validate test quality using the TDD Guide skill.
+Gera testes, analisa cobertura e valida a qualidade dos testes usando a skill TDD Guide.
 
-## Usage
+## Uso
 
 ```
-/tdd generate <file-or-dir>     Generate tests for source files
-/tdd coverage <test-dir>        Analyze test coverage and gaps
-/tdd validate <test-file>       Validate test quality (assertions, edge cases)
+/tdd generate <arquivo-ou-dir>  Gera testes para arquivos-fonte
+/tdd coverage <dir-de-testes>   Analisa cobertura e lacunas de teste
+/tdd validate <arquivo-teste>   Valida qualidade do teste (asserções, casos extremos)
 ```
 
-## Examples
+## Exemplos
 
 ```
 /tdd generate src/auth/login.ts
@@ -24,13 +24,13 @@ Generate tests, analyze coverage, and validate test quality using the TDD Guide 
 ```
 
 ## Scripts
-- `engineering-team/tdd-guide/scripts/test_generator.py` — Test case generation (library module)
-- `engineering-team/tdd-guide/scripts/coverage_analyzer.py` — Coverage analysis (library module)
-- `engineering-team/tdd-guide/scripts/tdd_workflow.py` — TDD workflow orchestration (library module)
-- `engineering-team/tdd-guide/scripts/fixture_generator.py` — Test fixture generation (library module)
-- `engineering-team/tdd-guide/scripts/metrics_calculator.py` — TDD metrics calculation (library module)
+- `engineering-team/tdd-guide/scripts/test_generator.py` — Geração de casos de teste (módulo biblioteca)
+- `engineering-team/tdd-guide/scripts/coverage_analyzer.py` — Análise de cobertura (módulo biblioteca)
+- `engineering-team/tdd-guide/scripts/tdd_workflow.py` — Orquestração do fluxo TDD (módulo biblioteca)
+- `engineering-team/tdd-guide/scripts/fixture_generator.py` — Geração de fixtures de teste (módulo biblioteca)
+- `engineering-team/tdd-guide/scripts/metrics_calculator.py` — Cálculo de métricas TDD (módulo biblioteca)
 
-> **Note:** These scripts are library modules without CLI entry points. Import them in Python or use via the SKILL.md workflow guidance.
+> **Nota:** Esses scripts são módulos biblioteca sem pontos de entrada CLI. Importe-os em Python ou use via orientação do SKILL.md.
 
-## Skill Reference
+## Referência de Skill
 → `engineering-team/tdd-guide/SKILL.md`

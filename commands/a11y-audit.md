@@ -1,80 +1,80 @@
 ---
 name: a11y-audit
-description: Scan a frontend project for WCAG 2.2 accessibility violations and fix them. Usage: /a11y-audit [path]
+description: Varre um projeto frontend em busca de violações de acessibilidade WCAG 2.2 e as corrige. Uso: /a11y-audit [caminho]
 ---
 
 # /a11y-audit
 
-Scan a frontend project for WCAG 2.2 accessibility issues, show fixes, and optionally check color contrast.
+Varre um projeto frontend em busca de problemas de acessibilidade WCAG 2.2, exibe correções e verifica contraste de cores.
 
-## Usage
+## Uso
 
 ```bash
-/a11y-audit                     # Scan current project
-/a11y-audit ./src               # Scan specific directory
-/a11y-audit ./src --fix         # Scan and auto-fix what's possible
+/a11y-audit                     # Varre o projeto atual
+/a11y-audit ./src               # Varre um diretório específico
+/a11y-audit ./src --fix         # Varre e aplica correções automáticas
 ```
 
-## What It Does
+## O que faz
 
-### Step 1: Scan
+### Etapa 1: Varredura
 
-Run the a11y scanner on the target directory:
+Executa o scanner de acessibilidade no diretório alvo:
 
 ```bash
 python3 {skill_path}/scripts/a11y_scanner.py {path} --json
 ```
 
-Parse the JSON output. Group findings by severity (critical → serious → moderate → minor).
+Agrupa os achados por severidade (crítico → sério → moderado → leve).
 
-Display a summary:
+Exibe um resumo:
 ```
-A11y Audit: ./src
-  Critical: 3 | Serious: 7 | Moderate: 12 | Minor: 5
-  Files scanned: 42 | Files with issues: 15
+Auditoria A11y: ./src
+  Crítico: 3 | Sério: 7 | Moderado: 12 | Leve: 5
+  Arquivos varridos: 42 | Arquivos com problemas: 15
 ```
 
-### Step 2: Fix
+### Etapa 2: Correção
 
-For each finding (starting with critical):
+Para cada achado (começando pelos críticos):
 
-1. Read the affected file
-2. Show the violation with context (before)
-3. Apply the fix from `references/framework-a11y-patterns.md`
-4. Show the result (after)
+1. Lê o arquivo afetado
+2. Exibe a violação com contexto (antes)
+3. Aplica a correção de `references/framework-a11y-patterns.md`
+4. Exibe o resultado (depois)
 
-**Auto-fixable issues** (apply without asking):
-- Missing `alt=""` on decorative images
-- Missing `lang` attribute on `<html>`
-- `tabindex` values > 0 → set to 0
-- Missing `type="button"` on non-submit buttons
-- Outline removal without replacement → add `:focus-visible` styles
+**Correções automáticas** (aplicadas sem perguntar):
+- `alt=""` ausente em imagens decorativas
+- Atributo `lang` ausente no `<html>`
+- Valores de `tabindex` > 0 → definidos como 0
+- `type="button"` ausente em botões não-submit
+- Remoção de outline sem substituto → adiciona estilos `:focus-visible`
 
-**Issues requiring user input** (show fix, ask to apply):
-- Missing alt text (need description from user)
-- Missing form labels (need label text)
-- Heading restructuring (may affect layout)
-- ARIA role changes (may affect functionality)
+**Problemas que exigem decisão do usuário** (exibe a correção e pergunta):
+- Texto alternativo ausente (requer descrição do usuário)
+- Labels de formulário ausentes (requer texto do label)
+- Reestruturação de headings (pode afetar layout)
+- Alterações de papel ARIA (pode afetar funcionalidade)
 
-### Step 3: Contrast Check
+### Etapa 3: Verificação de Contraste
 
-If CSS files are present, run the contrast checker:
+Se houver arquivos CSS, executa o verificador de contraste:
 
 ```bash
 python3 {skill_path}/scripts/contrast_checker.py --batch {path}
 ```
 
-For each failing color pair, suggest accessible alternatives.
+Para cada par de cores com falha, sugere alternativas acessíveis.
 
-### Step 4: Report
+### Etapa 4: Relatório
 
-Generate a markdown report at `a11y-report.md`:
-- Executive summary (pass/fail, issue counts)
-- Per-file findings with before/after diffs
-- Remaining manual review items
-- WCAG criteria coverage
+Gera um relatório markdown em `a11y-report.md`:
+- Resumo executivo (aprovado/reprovado, contagem de problemas)
+- Achados por arquivo com diffs antes/depois
+- Itens pendentes de revisão manual
+- Cobertura de critérios WCAG
 
-## Skill Reference
+## Referência de Skill
 
 - `engineering-team/a11y-audit/SKILL.md`
 - `engineering-team/a11y-audit/scripts/a11y_scanner.py`

@@ -1,7 +1,6 @@
 ---
 name: "behuman"
 description: "Use quando o usuário quiser respostas de IA mais humanas — menos robóticas, menos listadas, mais autênticas. Gatilhos: 'behuman', 'seja real', 'como um humano', 'mais humano', 'menos IA', 'fale como uma pessoa', 'modo espelho', 'pare de ser tão IA', ou quando as conversas forem emocionalmente carregadas (luto, perda de emprego, conselho de relacionamento, medo). NÃO para perguntas técnicas, geração de código ou consultas factuais."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

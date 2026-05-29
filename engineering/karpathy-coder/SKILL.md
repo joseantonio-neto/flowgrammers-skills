@@ -3,7 +3,6 @@ name: karpathy-coder
 description: Use quando escrever, revisar ou commitar código para aplicar os 4 princípios de codificação de Karpathy — explicite suposições antes de codificar, mantenha simples, faça mudanças cirúrgicas, defina objetivos verificáveis. Gatilhos em "revise meu diff", "verifique complexidade", "estou complicando demais?", "karpathy check", "antes de commitar", ou qualquer preocupação de qualidade de código onde o LLM possa estar sobrecodificando.
 context: fork
 version: 2.3.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags: [code-quality, discipline, karpathy, simplicity, surgical-changes, anti-patterns, review]
 agents:

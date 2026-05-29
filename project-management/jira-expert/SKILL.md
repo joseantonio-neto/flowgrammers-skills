@@ -1,7 +1,6 @@
 ---
 name: "jira-expert"
 description: Especialista em Atlassian Jira para criação e gestão de projetos, planejamento, descoberta de produto, consultas JQL, fluxos de trabalho, campos personalizados, automação, relatórios e todos os recursos do Jira. Use para configuração de projeto Jira, configuração avançada de busca, criação de painéis, design de fluxo de trabalho e operações técnicas do Jira.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

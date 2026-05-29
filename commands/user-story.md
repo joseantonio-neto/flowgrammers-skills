@@ -1,34 +1,34 @@
 ---
 name: user-story
-description: Generate user stories with acceptance criteria and sprint planning. Usage: /user-story <generate|sprint> [options]
+description: Gera user stories com critérios de aceite e planejamento de sprint. Uso: /user-story <generate|sprint> [opções]
 ---
 
 # /user-story
 
-Generate structured user stories with acceptance criteria, story points, and sprint capacity planning.
+Gera user stories estruturadas com critérios de aceite, story points e planejamento de capacidade de sprint.
 
-## Usage
+## Uso
 
 ```
-/user-story generate                                         Generate user stories (interactive)
-/user-story sprint <capacity>                                Plan sprint with story point capacity
+/user-story generate                                         Gera user stories (interativo)
+/user-story sprint <capacidade>                              Planeja sprint com capacidade em story points
 ```
 
-## Input Format
+## Formato de Entrada
 
-Interactive mode prompts for feature context. For sprint planning, provide capacity as story points:
+O modo interativo solicita o contexto da feature. Para planejamento de sprint, informe a capacidade em story points:
 
 ```
 /user-story generate
-> Feature: User authentication
-> Persona: Engineering manager
-> Epic: Platform Security
+> Feature: Autenticação de usuário
+> Persona: Gerente de engenharia
+> Épico: Segurança da Plataforma
 
 /user-story sprint 21
-> Stories are ranked by priority and fit within 21-point capacity
+> Stories são classificadas por prioridade e cabem dentro de 21 pontos de capacidade
 ```
 
-## Examples
+## Exemplos
 
 ```
 /user-story generate
@@ -37,7 +37,7 @@ Interactive mode prompts for feature context. For sprint planning, provide capac
 ```
 
 ## Scripts
-- `product-team/agile-product-owner/scripts/user_story_generator.py` — User story generator (positional args: `sprint <capacity>`)
+- `product-team/agile-product-owner/scripts/user_story_generator.py` — Gerador de user story (args posicionais: `sprint <capacidade>`)
 
-## Skill Reference
+## Referência de Skill
 > `product-team/agile-product-owner/SKILL.md`

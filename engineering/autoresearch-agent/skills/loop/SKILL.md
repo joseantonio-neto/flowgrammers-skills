@@ -2,7 +2,6 @@
 name: "loop"
 description: "Iniciar um loop autônomo de experimentos com intervalo selecionado pelo usuário (10min, 1h, diário, semanal, mensal). Usa CronCreate para agendamento."
 command: /ar:loop
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

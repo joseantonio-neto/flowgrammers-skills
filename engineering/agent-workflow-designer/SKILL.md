@@ -1,7 +1,6 @@
 ---
 name: "agent-workflow-designer"
 description: "Projeta workflows multi-agente de nível produção com escolha clara de padrão, contratos de transferência, tratamento de falhas e controles de custo e contexto."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

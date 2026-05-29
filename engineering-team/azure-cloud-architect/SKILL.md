@@ -1,7 +1,6 @@
 ---
 name: "azure-cloud-architect"
 description: "Projete arquiteturas Azure para startups e empresas. Use ao projetar infraestrutura Azure, criar templates Bicep/ARM, otimizar custos Azure, configurar pipelines Azure DevOps ou migrar para Azure. Cobre AKS, App Service, Azure Functions, Cosmos DB e otimização de custos."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

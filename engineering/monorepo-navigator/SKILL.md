@@ -1,7 +1,6 @@
 ---
 name: "monorepo-navigator"
 description: "Navegador de Monorepo. Navega, gerencia e otimiza monorepos com Turborepo, Nx, pnpm workspaces e Lerna. Análise de impacto entre pacotes, builds seletivos, cache remoto e visualização de grafo de dependências."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

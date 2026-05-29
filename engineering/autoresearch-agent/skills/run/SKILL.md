@@ -2,7 +2,6 @@
 name: "run"
 description: "Executar uma única iteração de experimento. Editar o arquivo alvo, avaliar, manter ou descartar."
 command: /ar:run
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

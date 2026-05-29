@@ -1,13 +1,13 @@
 ---
 name: financial-health
-description: Run financial ratio analysis, DCF valuation, budget variance analysis, and rolling forecasts. Usage: /financial-health <ratios|dcf|budget|forecast> <data.json>
+description: Executa análise de índices financeiros, valuation por DCF, análise de variação orçamentária e previsões. Uso: /financial-health <ratios|dcf|budget|forecast> <data.json>
 ---
 
 # /financial-health
 
-Analyze financial statements, build valuation models, assess budget variances, and construct forecasts.
+Analisa demonstrações financeiras, constrói modelos de valuation, avalia variações orçamentárias e elabora projeções.
 
-## Usage
+## Uso
 
 ```
 /financial-health ratios <financial_data.json> [--format json|text]
@@ -16,23 +16,23 @@ Analyze financial statements, build valuation models, assess budget variances, a
 /financial-health forecast <forecast_data.json> [--format json|text]
 ```
 
-## Examples
+## Exemplos
 
 ```
-/financial-health ratios quarterly_financials.json --format json
-/financial-health dcf acme_valuation.json
-/financial-health budget q1_budget.json --format json
-/financial-health forecast revenue_history.json
+/financial-health ratios financeiros_trimestre.json --format json
+/financial-health dcf valuation_empresa.json
+/financial-health budget orcamento_q1.json --format json
+/financial-health forecast historico_receita.json
 ```
 
 ## Scripts
-- `finance/financial-analyst/scripts/ratio_calculator.py` — Profitability, liquidity, leverage, efficiency, valuation ratios
-- `finance/financial-analyst/scripts/dcf_valuation.py` — DCF enterprise and equity valuation with sensitivity analysis
-- `finance/financial-analyst/scripts/budget_variance_analyzer.py` — Actual vs budget vs prior year variance analysis
-- `finance/financial-analyst/scripts/forecast_builder.py` — Driver-based revenue forecasting with scenario modeling
+- `finance/financial-analyst/scripts/ratio_calculator.py` — Índices de rentabilidade, liquidez, alavancagem, eficiência e valuation
+- `finance/financial-analyst/scripts/dcf_valuation.py` — Valuation DCF de empresa e equity com análise de sensibilidade
+- `finance/financial-analyst/scripts/budget_variance_analyzer.py` — Análise de variação realizado vs orçado vs ano anterior
+- `finance/financial-analyst/scripts/forecast_builder.py` — Previsão de receita baseada em drivers com modelagem de cenários
 
-## Skill Reference
+## Referência de Skill
 → `finance/financial-analyst/SKILL.md`
 
-## Related Commands
-- `/saas-health` — SaaS-specific metrics (ARR, MRR, churn, CAC, LTV, Quick Ratio)
+## Comandos Relacionados
+- `/saas-health` — Métricas específicas de SaaS (ARR, MRR, churn, CAC, LTV, Quick Ratio)

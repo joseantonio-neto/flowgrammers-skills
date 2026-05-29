@@ -1,7 +1,6 @@
 ---
 name: "red-team"
 description: "Use quando planejar ou executar engajamentos de red team autorizados, análise de caminho de ataque ou simulações de segurança ofensiva. Cobre planejamento de kill-chain com MITRE ATT&CK, pontuação de técnicas, identificação de pontos críticos, avaliação de risco OPSEC e identificação de alvos de alto valor."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

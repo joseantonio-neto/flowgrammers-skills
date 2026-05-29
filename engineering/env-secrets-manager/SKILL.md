@@ -1,7 +1,6 @@
 ---
 name: "env-secrets-manager"
 description: "Gerenciador de Env e Secrets — gerencia higiene de variáveis de ambiente e segurança de secrets em workflows de desenvolvimento local e produção, com auditoria, detecção de vazamento e orientação de rotação."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

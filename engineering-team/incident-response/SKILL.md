@@ -1,7 +1,6 @@
 ---
 name: "incident-response"
 description: "Use quando um incidente de segurança foi detectado ou declarado e precisa de classificação, triagem, determinação de caminho de escalação e coleta de evidências forenses. Cobre classificação SEV1-SEV4, filtragem de falsos positivos, taxonomia de incidentes e ciclo de vida NIST SP 800-61."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

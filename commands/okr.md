@@ -1,25 +1,25 @@
 ---
 name: okr
-description: Generate OKR cascades from company strategy to team objectives. Usage: /okr generate <strategy>
+description: Gera cascatas de OKRs a partir da estratégia da empresa até os objetivos de time. Uso: /okr generate <estratégia>
 ---
 
 # /okr
 
-Generate cascaded OKR frameworks from company-level strategy down to team-level key results.
+Gera frameworks de OKRs em cascata desde o nível estratégico da empresa até os key results de cada time.
 
-## Usage
+## Uso
 
 ```
-/okr generate <strategy>                                     Generate OKR cascade
+/okr generate <estratégia>                                   Gera cascata de OKRs
 ```
 
-Supported strategies: `growth`, `retention`, `revenue`, `innovation`, `operational`
+Estratégias suportadas: `growth`, `retention`, `revenue`, `innovation`, `operational`
 
-## Input Format
+## Formato de Entrada
 
-Pass a strategy keyword directly. The generator produces company, department, and team-level OKRs aligned to the chosen strategy.
+Passe uma palavra-chave de estratégia diretamente. O gerador produz OKRs no nível da empresa, do departamento e do time, alinhados à estratégia escolhida.
 
-## Examples
+## Exemplos
 
 ```
 /okr generate growth
@@ -31,7 +31,7 @@ Pass a strategy keyword directly. The generator produces company, department, an
 ```
 
 ## Scripts
-- `product-team/product-strategist/scripts/okr_cascade_generator.py` — OKR cascade generator (`<strategy> [--teams "A,B,C"] [--contribution 0.3] [--json]`)
+- `product-team/product-strategist/scripts/okr_cascade_generator.py` — Gerador de cascata de OKRs (`<estratégia> [--teams "A,B,C"] [--contribution 0.3] [--json]`)
 
-## Skill Reference
+## Referência de Skill
 > `product-team/product-strategist/SKILL.md`

@@ -1,7 +1,6 @@
 ---
 name: "code-reviewer"
 description: Automação de revisão de código para TypeScript, JavaScript, Python, Go, Swift, Kotlin. Analisa PRs quanto a complexidade e risco, verifica qualidade de código para violações SOLID e code smells, gera relatórios de revisão. Use ao revisar pull requests, analisar qualidade de código, identificar problemas ou gerar checklists de revisão.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

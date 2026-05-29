@@ -4,7 +4,6 @@ description: >-
   Execute testes no BrowserStack. Use quando o usuário menciona "browserstack",
   "cross-browser", "testes em nuvem", "matriz de navegadores", "testar no safari",
   "testar no firefox" ou "compatibilidade de navegadores".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,25 +1,25 @@
-# Flowgrammers Claude Skills
+# Flowgrammers Skills
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-e8006a.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-251-e8006a.svg)](#mapa-completo-de-skills)
+[![Skills](https://img.shields.io/badge/skills-383-e8006a.svg)](#mapa-completo-de-skills)
 [![Idioma](https://img.shields.io/badge/idioma-PT--BR-e8006a.svg)](#)
-[![Claude Code](https://img.shields.io/badge/platform-Claude%20Code-00e8d0.svg)](https://docs.claude.com/en/docs/claude-code/overview)
-[![Version](https://img.shields.io/badge/version-2.1.0-00e8d0.svg)](CHANGELOG.md)
+[![Plataformas](https://img.shields.io/badge/plataformas-Claude%20·%20Cursor%20·%20Codex%20·%20Windsurf-00e8d0.svg)](#como-usar)
+[![Version](https://img.shields.io/badge/version-2.2.0-00e8d0.svg)](CHANGELOG.md)
 
-> **251 skills + 29 comandos slash prontos para produção no Claude Code**
-> Contexto 100% brasileiro · Apenas Claude Code · Por Ric Neves — Flowgrammers
+> **383 skills + 29 comandos slash prontos para produção**
+> Contexto 100% brasileiro · Multi-plataforma · Claude Code, Cursor, Codex, Windsurf, OpenClaw
 
-> 📊 **Veja a apresentação visual completa:** abra [`SKILLS-portavel.html`](SKILLS-portavel.html) no navegador — 14 slides cobrindo todos os 9 domínios.
+> 📊 **Veja a apresentação visual completa:** abra [`SKILLS-portavel.html`](SKILLS-portavel.html) no navegador.
 
 ---
 
 ## O que são Skills?
 
-Skills são arquivos de instrução que transformam o Claude Code em especialistas sob demanda. Em vez de escrever longos prompts toda vez, você carrega uma skill e o Claude assume imediatamente o papel de um especialista — com frameworks, ferramentas e contexto já configurados.
+Skills são arquivos de instrução que transformam qualquer AI coding assistant em especialistas sob demanda. Em vez de escrever longos prompts toda vez, você carrega uma skill e o AI assume imediatamente o papel de um especialista — com frameworks, ferramentas e contexto já configurados.
 
 ```
 Sem skill:  "Me ajude com marketing..."        → resposta genérica
-Com skill:  /read marketing-skill/paid-ads/SKILL.md
+Com skill:  /read conteudo-copy/copy-de-anuncio/SKILL.md
             "Preciso de uma campanha no Meta Ads com orçamento de R$5k"
             → análise de segmentação, estrutura de campanha, copy de anúncio, ROAS esperado
 ```
@@ -33,7 +33,6 @@ curl -fsSL https://raw.githubusercontent.com/ricardonevesbraga/flowgrammers-skil
 ```
 
 Isso instala tudo automaticamente em `~/.claude/skills/` e `~/.claude/commands/`.
-Veja a seção [Instalação Manual](#instalação-manual) se preferir controle total.
 
 ### Ou clone e instale
 
@@ -43,43 +42,345 @@ cd flowgrammers-skills
 ./install.sh
 ```
 
-> ⭐ **Gostou?** Deixe uma estrela no GitHub — ajuda o projeto a crescer organicamente.
+> ⭐ **Gostou?** Deixe uma estrela no GitHub — ajuda o projeto a crescer.
 
 ---
 
 ## Como Usar
 
-### 1. Carregar uma skill
-
+### Claude Code
 ```
-/read c-level-advisor/ceo-advisor/SKILL.md
-```
-
-### 2. Pedir ao Claude para agir como especialista
-
-```
-Use a skill de CEO Advisor e me ajude a preparar minha apresentação para investidores.
-Atue como Senior Frontend e revise meu componente React.
-Como especialista em SEO, analise meu site para o mercado brasileiro.
+/read [dominio]/[sub-skill]/SKILL.md
 ```
 
-### 3. Usar comandos slash (após instalação)
+### Cursor
+Cole o conteúdo do SKILL.md desejado no `.cursorrules` ou em `.cursor/rules/[nome].md`.
+
+### Codex / GitHub Copilot
+Inclua o conteúdo do SKILL.md no `AGENTS.md` do projeto ou passe como contexto de sistema.
+
+### Windsurf
+Adicione nas instruções globais em **Windsurf Settings > AI Rules**.
+
+### OpenClaw
+Carregue via `/skill` ou inclua no contexto do sistema.
+
+### Claude.ai (interface web)
+
+Não é necessário instalar nada — basta copiar e colar o conteúdo da skill desejada.
+
+**Opção 1 — Em um projeto Claude.ai:**
+1. Acesse [claude.ai/projects](https://claude.ai/projects) e abra ou crie um projeto
+2. Clique em **Project Instructions** (ícone de lápis)
+3. Cole o conteúdo do  desejado nas instruções do projeto
+4. Todas as conversas dentro do projeto já terão a skill ativa
+
+**Opção 2 — Em qualquer conversa:**
+1. Abra uma nova conversa em [claude.ai](https://claude.ai)
+2. Cole o conteúdo do  no início da conversa como contexto de sistema
+3. Continue a conversa normalmente — a skill estará ativa para toda a sessão
+
+**Dica:** Skills menores (< 2.000 tokens) funcionam melhor em conversas únicas. Para skills com múltiplos arquivos de referência, use sempre um projeto.
+
+### Exemplos rápidos
 
 ```
-/prd          → gera um PRD completo
-/tdd          → workflow de TDD
-/sprint-plan  → planejamento de sprint
-/saas-health  → métricas de saúde do SaaS
-/tech-debt    → análise de dívida técnica
+/read conteudo-copy/gerador-de-headlines/SKILL.md
+Preciso de 10 headlines para landing page de curso de vendas B2B.
+
+/read financeiro-compliance/conformidade-lgpd/SKILL.md
+Temos 50k usuários e enviamos emails de marketing. Como me adequar à LGPD?
+
+/read prd-generator/SKILL.md
+[cole seu product brief aqui]
+
+/read codigo-automacao/engenheiro-de-prompts/SKILL.md
+Preciso otimizar meus prompts para o Claude Code rodar tasks complexas.
 ```
 
 ---
 
 ## Mapa Completo de Skills
 
-### C-Level Advisory (`c-level-advisor/`) — 37 skills
+### Novos Domínios (v2.2.0)
 
-Assessoria estratégica para líderes executivos.
+#### Conteúdo & Copy (`conteudo-copy/`) — 10 skills
+
+Headlines, hooks, copy de anúncio, posts, emails e artigos.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Gerador de Headlines | `gerador-de-headlines/` | Headlines com AIDA, PAS, 4U, Curiosity Gap |
+| Criador de Hooks | `criador-de-hooks/` | Hooks para posts, vídeos, threads e stories |
+| Copy de Anúncio | `copy-de-anuncio/` | Copy para Meta Ads, Google Ads, LinkedIn BR |
+| Escritor de Emails | `escritor-de-emails/` | Sequências de email, newsletters, cold email |
+| Escritor de Artigos | `escritor-de-artigos/` | Blog, SEO, white papers e long-form |
+| Posts Sociais | `posts-sociais/` | Instagram, LinkedIn, Twitter/X, TikTok |
+| Copy de Vendas | `copy-de-vendas/` | Páginas de vendas, VSL, copy de produto |
+| Reaproveitamento de Conteúdo | `reaproveitamento-de-conteudo/` | Video → post → email → thread |
+| Storytelling | `storytelling/` | Narrativa de marca e storytelling corporativo |
+| Descrição de Produto | `descricao-de-produto/` | Descrições para e-commerce e marketplace BR |
+
+```
+/read conteudo-copy/gerador-de-headlines/SKILL.md
+Preciso de 10 headlines para uma landing page de software de gestão para PMEs.
+```
+
+---
+
+#### Marketing, Vendas & Publicidade (`marketing-vendas/`) — 10 skills
+
+Funis, propostas, objeções, ads e brand voice.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Funil de Vendas | `funil-vendas/` | Mapeamento e otimização TOFU/MOFU/BOFU |
+| Proposta Comercial | `proposta-comercial/` | Propostas profissionais com precificação BR |
+| Objeções de Vendas | `objecoes-vendas/` | Roteiros para tratar objeções comuns |
+| Voz da Marca | `voz-da-marca/` | Definição e manual de tom de voz |
+| Deck de Pitch | `deck-de-pitch/` | Apresentações de vendas e pitch para investidores |
+| Follow-up | `follow-up/` | Sequências por e-mail, WhatsApp e telefone |
+| Script de Vendas | `script-vendas/` | Scripts para cold call, discovery e fechamento |
+| Estudo de Caso | `estudo-de-caso/` | Cases de sucesso, depoimentos e provas sociais |
+| Estratégia Promocional | `estrategia-promocional/` | Promoções sazonais (Black Friday, etc.) |
+| Análise Competitiva | `analise-competitiva/` | Posicionamento e análise de concorrentes BR |
+
+---
+
+#### Financeiro, Jurídico & Compliance (`financeiro-compliance/`) — 10 skills
+
+Fluxo de caixa, contratos, LGPD, impostos e riscos.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Fluxo de Caixa | `fluxo-caixa/` | Modelagem, projeções e gestão de capital de giro |
+| DRE e Balanço | `dre-balanco/` | DRE, balanço patrimonial no padrão BR |
+| Impostos BR | `impostos-br/` | Simples Nacional, Lucro Presumido, Real, MEI |
+| Conformidade LGPD | `conformidade-lgpd/` | LGPD: DPIA, políticas de privacidade, DPA |
+| Contratos BR | `contratos-br/` | Contratos conforme CC, CDC e CLT |
+| Gestão de Riscos | `gestao-riscos/` | Matriz de riscos e planos de mitigação |
+| Cobrança | `cobranca/` | Scripts e estratégias de cobrança (respeito ao CDC) |
+| KPIs Financeiros | `kpis-financeiros/` | Dashboards: LTV, CAC, MRR, ARR, payback em R$ |
+| Due Diligence | `due-diligence/` | Checklist para M&A, investimento e parcerias |
+| Open Finance / PIX | `open-finance-pix/` | PIX, Open Finance, recorrência, split de pagamentos |
+
+---
+
+#### Operações, RH & Gestão (`operacoes-rh/`) — 10 skills
+
+SOPs, vagas, OKRs, onboarding e automação.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Criador de SOP | `criador-de-sop/` | SOPs com fluxogramas e responsabilidades |
+| Descrição de Vagas | `descricao-de-vagas/` | JDs, perfis e critérios de seleção |
+| Onboarding | `onboarding/` | Planos de onboarding para CLT/PJ e clientes |
+| Gestão de OKRs | `gestao-de-okrs/` | Definição, cascateamento e acompanhamento |
+| Avaliação de Desempenho | `avaliacao-desempenho/` | 360°, PDI, calibração e promoções |
+| Políticas de RH | `politicas-rh/` | Código de conduta, handbook do colaborador |
+| Automação de Processos | `automacao-processos/` | Identificação e automação com Make/Zapier/n8n |
+| Facilitador de Reuniões | `facilitador-de-reunioes/` | Agenda, facilitação e ata de reuniões produtivas |
+| Cultura da Empresa | `cultura-empresa/` | Valores, rituais e desenvolvimento de cultura |
+| CLT / PJ / MEI | `clt-pj-mei/` | Regimes de contratação e compliance trabalhista BR |
+
+---
+
+#### Produto, E-commerce & SaaS (`produto-ecommerce/`) — 10 skills
+
+Lançamentos, PLG, churn, e-commerce e vendas.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Lançamento de Produto | `lancamento-produto/` | Playbook pré/lançamento/pós-lançamento |
+| Estratégia PLG | `estrategia-plg/` | Product-Led Growth: trial, freemium, expansão |
+| Análise de Churn | `analise-de-churn/` | Diagnóstico, cohort e estratégias de retenção |
+| Operações E-commerce | `operacoes-ecommerce/` | Catálogo, frete, checkout, devoluções BR |
+| Precificação SaaS | `precificacao-saas/` | Tiers, annual vs monthly, teste de preço em R$ |
+| Roadmap de Produto | `roadmap-de-produto/` | RICE, ICE, Now/Next/Later |
+| Upsell e Cross-sell | `upsell-e-crosssell/` | Estratégias de expansão de receita |
+| Estratégia Marketplace | `estrategia-marketplace/` | Mercado Livre, Amazon, Shopee, Magalu BR |
+| Abandono de Carrinho | `abandono-de-carrinho/` | Recuperação: email, WhatsApp e retargeting |
+| Analítica de Produto | `analitica-de-produto/` | DAU, MAU, NPS, retention, feature adoption |
+
+---
+
+#### Código, Dev & Automação (`codigo-automacao/`) — 10 skills
+
+Debug, APIs, Docker, testes, banco de dados e auth.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Especialista em Debug | `especialista-em-debug/` | Diagnóstico sistemático: logs, stack traces |
+| Construtor de API | `construtor-de-api/` | APIs REST e GraphQL com documentação |
+| Docker Compose | `docker-compose/` | Containerização para dev e produção |
+| Automação de Testes | `automacao-de-testes/` | Unitários, integração, E2E com Playwright |
+| Banco de Dados Ops | `banco-de-dados-ops/` | Queries, migrations, indexação, modelagem |
+| Implementação de Auth | `implementacao-de-auth/` | JWT, OAuth 2.0, Supabase Auth, Firebase |
+| No-Code Automação | `no-code-automacao/` | Make, Zapier, n8n, ActivePieces |
+| Integrador de Webhooks | `integrador-de-webhooks/` | Webhooks, eventos e filas de mensagens |
+| Especialista Claude Code | `especialista-claude-code/` | Claude Code avançado: skills, subagentes, worktrees |
+| Engenheiro de Prompts | `engenheiro-de-prompts/` | Prompt engineering para máxima produtividade |
+
+---
+
+#### Carreira, Educação & Marca Pessoal (`carreira-educacao/`) — 10 skills
+
+LinkedIn, cursos, mentoria, palestras e freelancing.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Perfil LinkedIn | `perfil-linkedin/` | Otimização para recrutadores e clientes BR |
+| Currículo e CV | `curriculo-e-cv/` | Currículo no padrão ATS e visual para BR |
+| Criador de Portfólio | `criador-de-portfolio/` | Portfólio profissional com cases e showcase |
+| Criador de Cursos | `criador-de-cursos/` | Módulos, aulas e materiais para EaD |
+| Preparação de Palestra | `palestra-preparacao/` | Palestras técnicas e apresentações em eventos |
+| Estrutura Freelancer | `estrutura-freelancer/` | Negócio freelancer: MEI, PJ, precificação BR |
+| Framework de Mentoria | `framework-de-mentoria/` | Programas de mentoria e planos de desenvolvimento |
+| Busca de Emprego | `busca-de-emprego/` | Estratégia e preparação para entrevistas técnicas |
+| Marca Pessoal | `marca-pessoal/` | Autoridade e posicionamento digital |
+| Negociação Salarial | `negociacao-salarial/` | Benchmarks de mercado BR, scripts de negociação |
+
+---
+
+#### Rotina, Tarefas & Organização (`rotina-organizacao/`) — 10 skills
+
+GTD, time blocking, checklists, delegação e produtividade pessoal.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Sistema GTD | `sistema-gtd/` | Getting Things Done adaptado ao Brasil |
+| Bloqueio de Tempo | `bloqueio-de-tempo/` | Time blocking, deep work e temas do dia |
+| Criador de Checklists | `criador-de-checklists/` | Checklists, SOPs pessoais e rotinas |
+| Delegação | `delegacao/` | Delegação eficaz para líderes e donos de negócio |
+| Revisão Semanal | `revisao-semanal/` | Revisão semanal: capturas, projetos e ações |
+| Prioridades | `prioridades/` | Eisenhower, RICE pessoal, princípio 80/20 |
+| Caixa de Entrada Zero | `caixa-de-entrada-zero/` | Gestão de email e notificações |
+| Hábitos | `habitos/` | Atomic habits, habit stacking, tracking |
+| Foco e Trabalho Profundo | `foco-e-trabalho-profundo/` | Pomodoro, deep work, eliminação de distrações |
+| Equilíbrio Vida | `equilibrio-vida/` | Work-life balance, prevenção de burnout |
+
+---
+
+#### Design & Branding (`design-branding/`) — 10 skills
+
+Propostas visuais, decks, identidade, materiais de vendas e assets B2B.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Identidade Visual | `identidade-visual/` | Identidade visual e brand guidelines |
+| Design de Pitch | `design-de-pitch/` | Pitch decks e apresentações executivas |
+| Materiais de Vendas | `materiais-vendas/` | One-pager, proposta visual, folder B2B |
+| Assets Redes Sociais | `assets-redes-sociais/` | Templates: feed, stories, banners |
+| Feedback de Design | `feedback-de-design/` | Feedback em projetos de UI/UX |
+| Briefing de Logo | `briefing-de-logo/` | Briefing de logo para designers e agências |
+| Manual de Marca | `manual-de-marca/` | Brandbook: aplicações, tipografia, cores |
+| Produção no Figma | `producao-no-figma/` | Organização e produção em Figma |
+| Apresentação Slides | `apresentacao-slides/` | Slides executivos: estrutura e narrativa |
+| Briefing de Vídeo | `briefing-de-video/` | Briefing para vídeos institucionais e de produto |
+
+---
+
+#### Jurídico & Advocacia (`juridico-advocacia/`) — 10 skills
+
+Petições, contratos, captação de clientes, precificação e rotina do advogado solo.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Petição Inicial | `peticao-inicial/` | Petições iniciais, contestações e recursos |
+| Contrato de Serviços | `contrato-servicos/` | Contratos conforme CC/CDC BR |
+| Captação de Clientes | `captacao-clientes/` | Captação respeitando o Código de Ética OAB |
+| Honorários | `honorarios/` | Tabela de honorários e precificação jurídica |
+| LGPD Jurídico | `lgpd-juridico/` | Adequação LGPD: contratos, políticas, DPA |
+| Trabalhista | `trabalhista/` | CLT, reforma, TST, dissídio e acordos |
+| Empresarial | `empresarial/` | Constituição de empresa, alterações societárias |
+| Consumidor | `consumidor/` | CDC, Procon, Reclame Aqui, mediação |
+| Rotina do Escritório | `rotina-escritorio/` | SOP para advocacia solo e boutique |
+| Marketing Jurídico | `marketing-juridico/` | Marketing permitido: LinkedIn, Instagram, WhatsApp |
+
+---
+
+#### Direção Criativa (`direcao-criativa/`) — 10 skills
+
+Ideação criativa, direção de arte, conceito de campanha e storytelling visual.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Conceito Criativo | `conceito-criativo/` | Big idea e conceito central de campanha |
+| Direção de Arte | `direcao-arte/` | Briefing e referências para produção visual |
+| Naming | `naming/` | Naming de produtos, marcas e campanhas |
+| Tagline | `tagline/` | Taglines, slogans e brand promises |
+| Campanha 360° | `campanha-360/` | Campanha integrada multi-canal |
+| Narrativa Visual | `narrativa-visual/` | Storytelling visual para marcas |
+| Moodboard | `moodboard/` | Moodboards e referências para produções |
+| Roteiro de Vídeo | `roteiro-video/` | Roteiros para vídeos publicitários |
+| Ideação | `ideacao/` | Brainstorming e sessões de ideação criativa |
+| Ativação de Marca | `ativacao-de-marca/` | Ativações de marca, experiências e eventos |
+
+---
+
+#### Liderança & Equipes (`lideranca-equipes/`) — 10 skills
+
+SOPs, OKRs, feedback, onboarding, delegação e gestão de times pequenos.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| Feedback Estruturado | `feedback-estruturado/` | Feedback 1:1 com SBI e feedforward |
+| Reunião Individual | `reuniao-individual/` | Preparação e condução de 1:1s eficazes |
+| Gestão de Conflitos | `gestao-conflitos/` | Resolução de conflitos e mediação |
+| Cultura Psicológica | `cultura-psicologica/` | Segurança psicológica e inclusão |
+| Reconhecimento | `reconhecimento/` | Programas de reconhecimento e engajamento |
+| Desenvolvimento de Time | `desenvolvimento-time/` | PDIs, trilhas de carreira e promoções |
+| Remoto e Híbrido | `remoto-hibrido/` | Gestão de times remotos e híbridos |
+| Reunião Eficaz | `reuniao-eficaz/` | Facilitação de reuniões produtivas |
+| Líder Técnico | `lider-tecnico/` | Transição de especialista para líder |
+| Time Pequeno | `time-pequeno/` | Gestão de 2-15 pessoas em startups e PMEs BR |
+
+---
+
+#### SEO, Analítica & Dados (`seo-analitica/`) — 10 skills
+
+SEO, analytics, métricas, relatórios de dados e inteligência de negócio.
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| SEO Técnico | `seo-tecnico/` | Auditoria: Core Web Vitals, indexação, schema |
+| Pesquisa de Palavras-chave | `pesquisa-de-palavras-chave/` | Keyword research para busca BR |
+| Google Analytics | `google-analytics/` | GA4 com eventos customizados |
+| Google Search Console | `google-search-console/` | GSC para diagnóstico e oportunidades |
+| Relatório de Dados | `relatorio-dados/` | Relatórios e dashboards executivos |
+| BI e Indicadores | `bi-indicadores/` | KPIs de negócio para PMEs: fórmulas e benchmarks |
+| Rastreamento UTM | `rastreamento-utm/` | UTMs, rastreamento de campanhas e atribuição |
+| Análise de Coortes | `analise-de-coortes/` | Cohort analysis, retenção e LTV |
+| Testes A/B | `testes-ab/` | Planejamento e análise estatística de A/B |
+| Dados e LGPD | `dados-lgpd/` | Coleta de dados em conformidade com LGPD |
+
+---
+
+### Skills de Produto
+
+#### PRD Generator (`prd-generator/`)
+
+Transforma um Product Brief em PRD completo com 9 seções, diagramas Mermaid e SQL PostgreSQL executável.
+
+```
+/read prd-generator/SKILL.md
+[cole seu product brief aqui]
+```
+
+#### SDD Generator (`sdd-generator/`)
+
+Decompõe um PRD em specs executáveis para subagentes paralelos no Claude Code.
+
+```
+/read sdd-generator/SKILL.md
+[cole seu PRD aqui]
+```
+
+---
+
+### Domínios Originais
+
+#### C-Level Advisory (`c-level-advisor/`) — 37 skills
 
 | Skill | O que faz |
 |-------|-----------|
@@ -92,191 +393,31 @@ Assessoria estratégica para líderes executivos.
 | `cro-advisor` | Revenue, pipeline, quota, sales ops |
 | `chro-advisor` | RH, cultura, retenção, CLT/PJ |
 | `ciso-advisor` | Segurança, LGPD, ISO 27001, gestão de risco |
-| `cdo-advisor` ✨ | Chief Data Officer — dados, governança, LGPD, monetização |
-| `caio-advisor` ✨ | Chief AI Officer — estratégia de IA, responsible AI, ROI |
-| `clo-advisor` ✨ | Chief Legal Officer — jurídico BR, M&A, LGPD |
+| `cdo-advisor` | Chief Data Officer — dados, governança, LGPD |
+| `caio-advisor` | Chief AI Officer — estratégia de IA, responsible AI |
+| `clo-advisor` | Chief Legal Officer — jurídico BR, M&A, LGPD |
 | `chief-of-staff` | Roteador automático para o C-suite correto |
-| `executive-mentor` | Coaching executivo com 5 sub-skills |
-| `board-meeting` | Protocolo e preparação de reunião de conselho |
-| `board-deck-builder` | Construção de deck para o board |
-| `founder-coach` | Coaching para founders em early-stage |
-| `decision-logger` | Registro e auditoria de decisões estratégicas |
-| E mais 19... | |
+| E mais 24... | |
 
-```
-/read c-level-advisor/ceo-advisor/SKILL.md
-Preciso preparar minha apresentação para a Série A. Temos ARR de R$2M, crescendo 15% a.m.
-```
+#### Engineering (`engineering/`) — 60 skills · Engineering Team (`engineering-team/`) — 54 skills
 
----
+RAG, MCP Server Builder, CI/CD, Observabilidade, Playwright, TDD, AWS/GCP/Azure, Mobile iOS/Android, SRE.
 
-### Engineering (`engineering/`) — 60 skills
+#### Marketing (`marketing-skill/`) — 45 skills
 
-Ferramentas avançadas de engenharia de software.
+SEO, AI SEO, CRO, Email Marketing, Paid Ads, Growth, Content Strategy.
 
-| Skill | O que faz |
-|-------|-----------|
-| `rag-architect` | Design de pipelines RAG, chunking, embeddings |
-| `mcp-server-builder` | Construção de MCP servers para Claude Code |
-| `database-designer` | Modelagem de banco de dados, índices, performance |
-| `ci-cd-pipeline-builder` | Pipelines CI/CD, GitHub Actions, deploy |
-| `api-design-reviewer` | Revisão de APIs REST/GraphQL |
-| `observability-designer` | Logs, métricas, traces, alertas |
-| `docker-development` | Containers, compose, otimização de imagens |
-| `terraform-patterns` | IaC, módulos, state management, segurança |
-| `performance-profiler` | Profiling Node.js, Python, Go — gargalos |
-| `pr-review-expert` | Revisão automatizada de pull requests |
-| `agenthub` | Orquestração de agentes com 7 sub-skills |
-| `autoresearch-agent` | Agente de pesquisa autônomo com 5 sub-skills |
-| E mais 43... | |
+#### Product Team (`product-team/`) — 18 skills · Business Growth (`business-growth/`) — 7 skills
 
-```
-/read engineering/rag-architect/SKILL.md
-Preciso implementar um RAG para documentos PDF em português com Pinecone e Claude.
-```
+PM toolkit, Growth PM, UX, UI Design System, CS Manager, RevOps.
 
----
+#### Finance (`finance/`) — 6 skills · RA/QM Team (`ra-qm-team/`) — 14 skills
 
-### Engineering Team (`engineering-team/`) — 54 skills
-
-Time completo de engenharia especializado.
-
-| Skill | O que faz |
-|-------|-----------|
-| `senior-frontend` | React, Next.js, TypeScript, Tailwind, acessibilidade |
-| `senior-backend` | APIs, banco de dados, autenticação, performance |
-| `senior-mobile-ios` ✨ | Swift 6, SwiftUI, Xcode Cloud, App Store |
-| `senior-mobile-android` ✨ | Kotlin, Jetpack Compose, Play Store, KMP |
-| `senior-sre` ✨ | SLO, error budget, postmortems, chaos engineering |
-| `senior-devops` | CI/CD, Kubernetes, monitoramento, cloud |
-| `senior-qa` | Testes, cobertura, E2E com Playwright |
-| `senior-architect` | Arquitetura de sistemas, trade-offs, decisões |
-| `senior-ml-engineer` | MLOps, LLMs, integração de IA em produção |
-| `senior-data-engineer` | Pipelines de dados, ETL/ELT, dbt, Airflow |
-| `code-reviewer` | Revisão de código TypeScript, Python, Go, Swift |
-| `tdd-guide` | Test-Driven Development, red-green-refactor |
-| `playwright-pro` | Testes E2E com 9 sub-skills especializadas |
-| `aws-solution-architect` | Arquitetura AWS, Well-Architected Framework |
-| `senior-security` | Segurança de aplicação, OWASP, modelagem de ameaças |
-| E mais 33... | |
-
-```
-/read engineering-team/senior-frontend/SKILL.md
-Revise este componente React e identifique problemas de performance e acessibilidade.
-```
-
----
-
-### Marketing (`marketing-skill/`) — 45 skills
-
-Marketing digital completo com contexto brasileiro.
-
-| Skill | O que faz |
-|-------|-----------|
-| `paid-ads` | Meta Ads, Google Ads, LinkedIn, TikTok — estratégia e copy |
-| `seo-audit` | Auditoria SEO técnica e on-page |
-| `ai-seo` | SEO para era da IA, Google SGE, otimização LLM |
-| `content-strategy` | Estratégia de conteúdo e calendário editorial |
-| `email-sequence` | Sequências de email e automação |
-| `copywriting` | Copy persuasivo para diferentes formatos |
-| `brand-guidelines` | Identidade e diretrizes de marca |
-| `pricing-strategy` | Estratégia de precificação e monetização |
-| `launch-strategy` | Estratégia de lançamento de produto |
-| `churn-prevention` | Prevenção de churn e retenção |
-| `social-media-manager` | Gestão de redes sociais com WhatsApp |
-| E mais 34... | |
-
-```
-/read marketing-skill/paid-ads/SKILL.md
-Quero criar uma campanha no Meta Ads para captar leads B2B no Brasil, orçamento R$10k/mês.
-```
-
----
-
-### Product Team (`product-team/`) — 18 skills
-
-| Skill | O que faz |
-|-------|-----------|
-| `product-manager-toolkit` | Kit completo de PM com RICE, OKRs, métricas |
-| `growth-product-manager` ✨ | NSM, AARRR, growth loops, PLG, experimentação |
-| `agile-product-owner` | PO ágil, backlog, refinement, sprint planning |
-| `ux-researcher-designer` | Pesquisa de usuário, entrevistas, personas |
-| `ui-design-system` | Sistema de design, componentes, tokens |
-| `landing-page-generator` | Geração de landing pages de alta conversão |
-| `saas-scaffolder` | Scaffolding completo de produto SaaS |
-| `competitive-teardown` | Análise competitiva detalhada |
-| `product-strategist` | Estratégia de produto e visão de longo prazo |
-| E mais 9... | |
-
----
-
-### Business Growth (`business-growth/`) — 7 skills
-
-Skills com contexto 100% brasileiro (LGPD, CLT, PIX, NF-e, CAMARB).
-
-| Skill | O que faz |
-|-------|-----------|
-| `customer-success-manager` | Health scoring, churn, expansão de conta |
-| `account-manager` ✨ | Account Plan, QBR, renovação, upsell/cross-sell |
-| `partnerships-manager` ✨ | Canais, resellers, SIs, marketplaces, MDF |
-| `sales-engineer` | Análise de RFP, PoC, matrizes competitivas |
-| `revenue-operations` | Pipeline, forecast, métricas GTM |
-| `contract-and-proposal-writer` | Contratos e propostas — lei brasileira |
-
-```
-/read business-growth/contract-and-proposal-writer/SKILL.md
-Preciso de um contrato de prestação de serviços de consultoria mensal, R$8k/mês, LGPD incluso.
-```
-
----
-
-### Project Management (`project-management/`) — 10 skills
-
-| Skill | O que faz |
-|-------|-----------|
-| `senior-pm` | Gestão de projetos, riscos, stakeholders |
-| `program-manager` ✨ | Programa multi-projeto, RAID log, steering committee |
-| `scrum-master` | Scrum, velocity, retrospectivas, burndown |
-| `jira-expert` | Automações e configurações avançadas do Jira |
-| `confluence-expert` | Documentação e knowledge base no Confluence |
-| `meeting-analyzer` | Análise e síntese de reuniões |
-
----
-
-### Finance (`finance/`) — 6 skills
-
-Métricas em R$, Simples Nacional, Receita Federal, PIX, NF-e, SPED.
-
-| Skill | O que faz |
-|-------|-----------|
-| `controller-contador` ✨ | Contabilidade BR (NF-e, SPED, ECD, regimes tributários) |
-| `fpa-analyst` ✨ | FP&A — budget, forecast, variance analysis, unit economics |
-| `financial-analyst` | Índices financeiros, DCF, variação orçamentária |
-| `saas-metrics-coach` | ARR, MRR, Churn, LTV, CAC — benchmarks do setor |
-| `business-investment-advisor` | Análise de investimentos e valuation |
-
----
-
-### RA/QM Team (`ra-qm-team/`) — 14 skills
-
-Regulatório e qualidade com contexto Brasil (ANVISA, LGPD, ANPD).
-
-| Skill | O que faz |
-|-------|-----------|
-| `gdpr-dsgvo-expert` | LGPD (Lei 13.709/18), GDPR, DPIA, direitos dos titulares |
-| `fda-consultant-specialist` | ANVISA/FDA, registro de dispositivos médicos |
-| `quality-manager-qms-iso13485` | QMS ISO 13485 para dispositivos médicos |
-| `information-security-manager-iso27001` | ISMS ISO 27001 |
-| `soc2-compliance` | SOC2 + LGPD para empresas SaaS |
-| `risk-management-specialist` | Gestão de riscos ISO 14971 |
-| `capa-officer` | CAPA, investigação de não-conformidades |
-| E mais 7... | |
+Controller BR, FP&A, SaaS Metrics · ISO 13485, LGPD, ANVISA/FDA, ISO 27001, SOC2.
 
 ---
 
 ## Comandos Slash Disponíveis
-
-Após instalação, disponíveis em qualquer projeto:
 
 | Comando | O que faz |
 |---------|-----------|
@@ -301,95 +442,66 @@ Após instalação, disponíveis em qualquer projeto:
 
 ## Contexto Brasileiro
 
-Todas as skills foram adaptadas para o mercado brasileiro:
-
 | Contexto | Skills Relevantes |
 |----------|------------------|
-| **LGPD** | `ra-qm-team/gdpr-dsgvo-expert`, `ra-qm-team/information-security-manager-iso27001` |
-| **PIX** | `business-growth/revenue-operations`, `finance/financial-analyst` |
-| **WhatsApp Business** | `skills-brasileiras/marketing`, `marketing-skill/social-media-manager` |
-| **NF-e / Fiscal** | `finance/financial-analyst`, `business-growth/revenue-operations` |
-| **CLT / PJ / MEI** | `c-level-advisor/chro-advisor`, `business-growth/contract-and-proposal-writer` |
-| **ANVISA** | `ra-qm-team/fda-consultant-specialist`, `ra-qm-team/regulatory-affairs-head` |
-| **Meta Ads BR** | `marketing-skill/paid-ads`, `skills-brasileiras/marketing` |
-| **Métricas em R$** | `finance/saas-metrics-coach`, `business-growth/revenue-operations` |
+| **LGPD** | `financeiro-compliance/conformidade-lgpd`, `juridico-advocacia/lgpd-juridico`, `seo-analitica/dados-lgpd` |
+| **PIX / Open Finance** | `financeiro-compliance/open-finance-pix` |
+| **WhatsApp Business** | `marketing-vendas/follow-up`, `marketing-vendas/script-vendas` |
+| **NF-e / SPED** | `financeiro-compliance/impostos-br`, `financeiro-compliance/dre-balanco` |
+| **CLT / PJ / MEI** | `operacoes-rh/clt-pj-mei`, `carreira-educacao/estrutura-freelancer` |
+| **ANVISA** | `ra-qm-team/fda-consultant-specialist` |
+| **Meta Ads BR** | `conteudo-copy/copy-de-anuncio`, `marketing-vendas/funil-vendas` |
+| **Métricas em R$** | `financeiro-compliance/kpis-financeiros`, `produto-ecommerce/precificacao-saas` |
+| **OAB** | `juridico-advocacia/` (domínio completo) |
+| **CONAR** | `direcao-criativa/campanha-360` |
 
 ---
 
 ## Instalação Manual
 
-### Opção 1 — Download do ZIP
-
-1. Baixe o arquivo `flowgrammers-claude-code-v2-brasil.zip`
-2. Descompacte
-3. Execute o instalador:
-   ```bash
-   cd flowgrammers-v2
-   chmod +x install.sh
-   ./install.sh
-   ```
-
-### Opção 2 — Clonar o repositório
-
 ```bash
+# Clonar e instalar
 git clone https://github.com/ricardonevesbraga/flowgrammers-skills.git
 cd flowgrammers-skills
 chmod +x install.sh
 ./install.sh
 ```
 
-### Opção 3 — Instalação manual passo a passo
-
+Ou passo a passo:
 ```bash
-# 1. Criar diretório de skills
-mkdir -p ~/.claude/flowgrammers-skills
-
-# 2. Copiar todos os arquivos
-cp -r . ~/.claude/flowgrammers-skills/
-
-# 3. Instalar comandos slash
+mkdir -p ~/.claude/skills
+cp -r . ~/.claude/skills/flowgrammers-skills/
 mkdir -p ~/.claude/commands
 cp -r commands/* ~/.claude/commands/
-
-# 4. Configurar CLAUDE.md global (opcional)
-cat >> ~/.claude/CLAUDE.md << 'EOF'
-
-## Flowgrammers Skills
-
-Skills disponíveis em: ~/.claude/flowgrammers-skills/
-Para usar: /read ~/.claude/flowgrammers-skills/[domínio]/[skill]/SKILL.md
-EOF
 ```
 
 ---
 
 ## Requisitos
 
-- **Claude Code** (CLI) instalado — `npm install -g @anthropic-ai/claude-code`
-- macOS, Linux ou Windows (WSL2)
+- **Claude Code / Cursor / Windsurf / Codex / OpenClaw** — instale via script ou manualmente
+- **Claude.ai** — nenhum requisito, basta copiar e colar (veja seção *Como Usar* acima)
+- macOS, Linux ou Windows (WSL2) para instalação local
 - Sem outras dependências
 
 ---
 
 ## Sobre
 
-Skills criadas e adaptadas pela **Flowgrammers** para o mercado brasileiro.
+Skills da comunidade Flowgrammers para o mercado brasileiro.
 
 - Site: [flowgrammers.com.br](https://flowgrammers.com.br)
-- Autor: Ric Neves — Flowgrammers
-- Versão: 2.1.0 ([changelog](CHANGELOG.md))
+- Versão: 2.2.0 ([changelog](CHANGELOG.md))
 - Licença: [MIT](LICENSE)
 - Repositório: [github.com/ricardonevesbraga/flowgrammers-skills](https://github.com/ricardonevesbraga/flowgrammers-skills)
 
 ## Contribuindo
 
-Quer sugerir uma skill nova, corrigir algo, ou adicionar um perfil que falta? Veja [CONTRIBUTING.md](CONTRIBUTING.md).
+Quer sugerir uma skill nova, corrigir algo, ou adicionar um perfil? Veja [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Apoie o projeto
 
-Se as skills te pouparam tempo:
-
-- ⭐ Dê uma estrela no GitHub — ajuda muito
+- ⭐ Dê uma estrela no GitHub
 - 🔁 Compartilhe com outros devs brasileiros
 - 💬 Abra uma issue com feedback ou sugestão
 - 🤝 Contribua com uma skill nova via PR

@@ -2,7 +2,6 @@
 name: "product-skills"
 description: "10 skills e plugins de agentes de produto para Claude Code. Kit de ferramentas para PM (RICE), PO ágil, estrategista de produto (OKR), pesquisador UX, sistema de UI design, análise competitiva, gerador de landing page, scaffolder SaaS, resumidor de pesquisas. Ferramentas Python (somente stdlib)."
 version: 1.1.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags:
   - product

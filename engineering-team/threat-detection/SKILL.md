@@ -1,7 +1,6 @@
 ---
 name: "threat-detection"
 description: "Use ao caçar ameaças em um ambiente, analisar IOCs ou detectar anomalias comportamentais em telemetria. Cobre threat hunting orientado a hipóteses, geração de varredura de IOC, detecção de anomalias por z-score e priorização de sinais mapeados ao MITRE ATT&CK."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

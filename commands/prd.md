@@ -1,25 +1,25 @@
 ---
 name: prd
-description: Quick PRD generation command. Usage: /prd <feature-or-problem>
+description: Geração rápida de PRD. Uso: /prd <feature-ou-problema>
 ---
 
 # /prd
 
-Generate a concise product requirements document for a feature, initiative, or problem statement.
+Gera um documento de requisitos de produto conciso para uma feature, iniciativa ou problema.
 
-## Usage
+## Uso
 
 ```bash
-/prd <feature-or-problem>
+/prd <feature-ou-problema>
 ```
 
-## Output Structure
+## Estrutura da Saída
 
-- Problem statement
-- Goals and non-goals
-- User stories and acceptance criteria
-- Metrics and success thresholds
-- Scope and timeline assumptions
+- Declaração do problema
+- Objetivos e não-objetivos
+- User stories e critérios de aceite
+- Métricas e limites de sucesso
+- Premissas de escopo e prazo
 
-## Skill Reference
+## Referência de Skill
 - `product-team/product-manager-toolkit/SKILL.md`

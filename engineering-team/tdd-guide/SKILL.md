@@ -1,7 +1,6 @@
 ---
 name: "tdd-guide"
 description: "Skill de desenvolvimento orientado a testes para escrever testes unitários, gerar fixtures e mocks de teste, analisar lacunas de cobertura e guiar workflows red-green-refactor em Jest, Pytest, JUnit, Vitest e Mocha. Use quando o usuário pedir para escrever testes, melhorar cobertura de testes, praticar TDD, gerar mocks ou stubs, ou mencionar frameworks de teste como Jest, pytest ou JUnit."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

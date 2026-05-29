@@ -1,7 +1,6 @@
 ---
 name: "senior-prompt-engineer"
 description: "Esta skill deve ser usada quando o usuário pedir para 'otimizar prompts', 'projetar templates de prompt', 'avaliar saídas de LLM', 'construir sistemas agênticos', 'implementar RAG', 'criar exemplos few-shot', 'analisar uso de tokens' ou 'projetar workflows de IA'. Use para padrões de prompt engineering, frameworks de avaliação de LLM, arquiteturas de agentes e design de saída estruturada."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

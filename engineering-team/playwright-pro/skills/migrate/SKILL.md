@@ -4,7 +4,6 @@ description: >-
   Migre do Cypress ou Selenium para o Playwright. Use quando o usuário mencionar
   "cypress", "selenium", "migrar testes", "converter testes", "migrar para
   playwright", "sair do cypress" ou "substituir selenium".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

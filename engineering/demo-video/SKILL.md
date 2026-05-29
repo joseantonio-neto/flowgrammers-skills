@@ -1,7 +1,6 @@
 ---
 name: "demo-video"
 description: "Use quando o usuário pedir para criar um vídeo de demonstração, walkthrough de produto, showcase de funcionalidade, apresentação animada, vídeo de marketing ou GIF a partir de screenshots ou descrições de cenas. Orquestra playwright, ffmpeg e edge-tts MCPs para produzir conteúdo de vídeo polido."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

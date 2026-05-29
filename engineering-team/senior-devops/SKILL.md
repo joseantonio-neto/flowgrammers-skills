@@ -1,7 +1,6 @@
 ---
 name: "senior-devops"
 description: "Skill DevOps abrangente para CI/CD, automação de infraestrutura, containerização e plataformas cloud (AWS, GCP, Azure). Inclui configuração de pipeline, infraestrutura como código, automação de implantação e monitoramento. Use quando configurar pipelines, implantar aplicações, gerenciar infraestrutura, implementar monitoramento ou otimizar processos de implantação."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

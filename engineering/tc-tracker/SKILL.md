@@ -1,7 +1,6 @@
 ---
 name: "tc-tracker"
 description: "Use quando o usuário pede para rastrear mudanças técnicas, criar registros de mudanças, gerenciar ciclos de vida de TCs, ou fazer handoff de trabalho entre sessões de IA. Cobre fluxos de trabalho init/create/update/status/resume/close/export para documentação estruturada de mudanças de código."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

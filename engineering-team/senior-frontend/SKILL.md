@@ -1,7 +1,6 @@
 ---
 name: "senior-frontend"
 description: "Skill de desenvolvimento frontend para aplicações React, Next.js, TypeScript e Tailwind CSS. Use quando construir componentes React, otimizar performance no Next.js, analisar tamanhos de bundle, criar scaffolding de projetos frontend, implementar acessibilidade ou revisar qualidade de código frontend."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

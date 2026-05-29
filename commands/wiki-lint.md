@@ -1,15 +1,15 @@
 ---
 name: wiki-lint
-description: Run a health check on the LLM Wiki vault — mechanical checks (orphans, broken links, stale pages, missing frontmatter, log gap, duplicates) plus semantic checks (contradictions, cross-reference gaps, concepts missing their own page). Outputs a markdown report with suggested actions. Usage /wiki-lint [--stale-days N] [--log-gap-days N]
+description: Executa uma verificação de saúde no vault LLM Wiki — checagens mecânicas (páginas órfãs, links quebrados, páginas desatualizadas, frontmatter ausente, lacuna no log, duplicatas) e checagens semânticas (contradições, lacunas de referência cruzada, conceitos sem página própria). Gera um relatório markdown com ações sugeridas. Uso: /wiki-lint [--stale-days N] [--log-gap-days N]
 ---
 
 # /wiki-lint
 
-Health-check the wiki. Surfaces orphan pages, broken wikilinks, stale claims, missing frontmatter, contradictions, and structural drift. **Reports, doesn't silently fix** — you decide what to change.
+Verifica a saúde do wiki. Identifica páginas órfãs, wikilinks quebrados, afirmações desatualizadas, frontmatter ausente, contradições e desvios estruturais. **Reporta, não corrige silenciosamente** — você decide o que alterar.
 
-Run this weekly, after batch ingests, and always before sharing the wiki.
+Execute semanalmente, após ingestões em lote e sempre antes de compartilhar o wiki.
 
-## Usage
+## Uso
 
 ```
 /wiki-lint
@@ -17,50 +17,50 @@ Run this weekly, after batch ingests, and always before sharing the wiki.
 /wiki-lint --log-gap-days 7
 ```
 
-## What happens
+## O que acontece
 
-### Pass 1 — Mechanical (scripts)
+### Passagem 1 — Mecânica (scripts)
 
-- `scripts/lint_wiki.py` — orphans, broken links, stale pages, missing frontmatter, duplicate titles, log gap
-- `scripts/graph_analyzer.py` — hubs, sinks, connected components, graph stats
+- `scripts/lint_wiki.py` — páginas órfãs, links quebrados, páginas desatualizadas, frontmatter ausente, títulos duplicados, lacuna no log
+- `scripts/graph_analyzer.py` — hubs, sinks, componentes conectados, estatísticas do grafo
 
-### Pass 2 — Semantic (LLM reads and thinks)
+### Passagem 2 — Semântica (LLM lê e analisa)
 
-- Contradictions between recently-updated pages
-- Stale claims superseded by newer sources
-- Concepts mentioned in plain text across 3+ pages without their own page
-- Cross-reference gaps (entities mentioned but not wikilinked)
-- Index drift (index.md out of sync with wiki/)
+- Contradições entre páginas atualizadas recentemente
+- Afirmações desatualizadas superadas por fontes mais recentes
+- Conceitos mencionados em texto simples em 3+ páginas sem página própria
+- Lacunas de referência cruzada (entidades mencionadas mas não vinculadas via wikilink)
+- Desvio do índice (index.md fora de sincronia com wiki/)
 
-### Pass 3 — Report
+### Passagem 3 — Relatório
 
-A markdown report grouped by severity:
+Um relatório markdown agrupado por severidade:
 
 ```markdown
-# Wiki lint — <date>
+# Wiki lint — <data>
 
-**Total pages:** N  **Components:** N  **Last log:** <date>
+**Total de páginas:** N  **Componentes:** N  **Último log:** <data>
 
-## Found
-- ⚠️ <N> contradictions (list)
-- <N> orphans
-- <N> broken links
-- <N> stale pages
+## Encontrado
+- ⚠️ <N> contradições (lista)
+- <N> páginas órfãs
+- <N> links quebrados
+- <N> páginas desatualizadas
 - ...
 
-## Suggested actions
-1. Investigate contradiction between [[sources/a]] and [[sources/b]]
-2. Create concept page for "<name>"
-3. Fix broken link in [[concepts/x]]
-4. Re-ingest [[sources/c]] — stale + contradicted
+## Ações sugeridas
+1. Investigar contradição entre [[sources/a]] e [[sources/b]]
+2. Criar página de conceito para "<nome>"
+3. Corrigir link quebrado em [[concepts/x]]
+4. Re-ingerir [[sources/c]] — desatualizado + contraditado
 5. ...
 ```
 
-Then appends a `lint` entry to `log.md`.
+Em seguida, acrescenta uma entrada `lint` ao `log.md`.
 
-## Sub-agent
+## Sub-agente
 
-Dispatches the `wiki-linter` sub-agent. See `agents/wiki-linter.md`.
+Despacha o sub-agente `wiki-linter`. Veja `agents/wiki-linter.md`.
 
 ## Scripts
 
@@ -68,16 +68,16 @@ Dispatches the `wiki-linter` sub-agent. See `agents/wiki-linter.md`.
 - `engineering/llm-wiki/scripts/graph_analyzer.py`
 - `engineering/llm-wiki/scripts/append_log.py`
 
-## Frequency
+## Frequência
 
-| Trigger | Pass |
+| Gatilho | Passagem |
 |---|---|
-| Weekly | Mechanical only — fast |
-| After batch ingest | Full (mechanical + semantic) |
-| Monthly | Full + structural review |
-| Before sharing | Full + extra review |
+| Semanal | Apenas mecânica — rápida |
+| Após ingestão em lote | Completa (mecânica + semântica) |
+| Mensal | Completa + revisão estrutural |
+| Antes de compartilhar | Completa + revisão extra |
 
-## Skill Reference
+## Referência de Skill
 
 → `engineering/llm-wiki/SKILL.md`
 → `engineering/llm-wiki/references/lint-workflow.md`

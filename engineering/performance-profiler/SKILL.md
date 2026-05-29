@@ -1,7 +1,6 @@
 ---
 name: "performance-profiler"
 description: "Profiler de Desempenho. Profiling sistemático de desempenho para aplicações Node.js, Python e Go. Identifica gargalos de CPU, memória e I/O, gera flamegraphs, analisa tamanhos de bundle, otimiza consultas de banco de dados, detecta vazamentos de memória e executa testes de carga."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

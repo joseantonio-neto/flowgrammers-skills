@@ -1,7 +1,6 @@
 ---
 name: "confluence-expert"
 description: Especialista em Atlassian Confluence para criação e gestão de espaços, bases de conhecimento e documentação. Configura permissões de espaço e hierarquias, cria templates de página com macros, estabelece taxonomias de documentação, projeta layouts de página e gerencia governança de conteúdo. Use quando usuários precisam construir ou reestruturar um espaço Confluence, projetar hierarquias de página com estruturas de permissão, criar ou padronizar templates de documentação, incorporar relatórios Jira em páginas, realizar auditorias de base de conhecimento ou estabelecer padrões de documentação e fluxos de trabalho colaborativos.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

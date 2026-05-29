@@ -4,7 +4,6 @@ description: >-
   Analise lacunas de cobertura de testes. Use quando o usuário disser "cobertura de testes",
   "o que não está testado", "lacunas de cobertura", "testes ausentes", "relatório de cobertura"
   ou "o que precisa de testes".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

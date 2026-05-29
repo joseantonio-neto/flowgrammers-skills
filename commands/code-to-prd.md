@@ -1,76 +1,76 @@
 ---
 name: code-to-prd
-description: Reverse-engineer a frontend codebase into a PRD. Usage: /code-to-prd [path]
+description: Faz engenharia reversa de um codebase frontend em um PRD. Uso: /code-to-prd [caminho]
 ---
 
 # /code-to-prd
 
-Reverse-engineer a frontend codebase into a complete Product Requirements Document.
+Faz engenharia reversa de um codebase frontend e gera um Documento de Requisitos de Produto (PRD) completo.
 
-## Usage
+## Uso
 
 ```bash
-/code-to-prd                    # Analyze current project
-/code-to-prd ./src              # Analyze specific directory
-/code-to-prd /path/to/project   # Analyze external project
+/code-to-prd                    # Analisa o projeto atual
+/code-to-prd ./src              # Analisa um diretório específico
+/code-to-prd /caminho/projeto   # Analisa um projeto externo
 ```
 
-## What It Does
+## O que faz
 
-1. **Scan** — Run `codebase_analyzer.py` to detect framework, routes, APIs, enums, and project structure
-2. **Scaffold** — Run `prd_scaffolder.py` to create `prd/` directory with README.md, per-page stubs, and appendix files
-3. **Analyze** — Walk through each page following the Phase 2 workflow: fields, interactions, API dependencies, page relationships
-4. **Generate** — Produce the final PRD with all pages, enum dictionary, API inventory, and page relationship map
+1. **Varredura** — Executa `codebase_analyzer.py` para detectar framework, rotas, APIs, enums e estrutura do projeto
+2. **Esqueleto** — Executa `prd_scaffolder.py` para criar o diretório `prd/` com README.md, stubs por página e arquivos de apêndice
+3. **Análise** — Percorre cada página seguindo o fluxo da Fase 2: campos, interações, dependências de API, relacionamentos entre páginas
+4. **Geração** — Produz o PRD final com todas as páginas, dicionário de enums, inventário de APIs e mapa de relacionamentos
 
-## Steps
+## Etapas
 
-### Step 1: Analyze
+### Etapa 1: Analisar
 
-Determine the project path (default: current directory). Run the frontend analyzer:
+Determina o caminho do projeto (padrão: diretório atual). Executa o analisador:
 
 ```bash
 python3 {skill_path}/scripts/codebase_analyzer.py {project_path} -o .code-to-prd-analysis.json
 ```
 
-Display a summary of findings: framework, page count, API count, enum count.
+Exibe um resumo: framework, contagem de páginas, APIs, enums.
 
-### Step 2: Scaffold
+### Etapa 2: Criar Esqueleto
 
-Generate the PRD directory skeleton:
+Gera a estrutura de diretórios do PRD:
 
 ```bash
 python3 {skill_path}/scripts/prd_scaffolder.py .code-to-prd-analysis.json -o prd/
 ```
 
-### Step 3: Fill
+### Etapa 3: Preencher
 
-For each page in the inventory, follow the SKILL.md Phase 2 workflow:
-- Read the page's component files
-- Document fields, interactions, API dependencies, page relationships
-- Fill in the corresponding `prd/pages/` stub
+Para cada página no inventário, segue o fluxo da Fase 2 do SKILL.md:
+- Lê os arquivos de componentes da página
+- Documenta campos, interações, dependências de API e relacionamentos
+- Preenche o stub correspondente em `prd/pages/`
 
-Work in batches of 3-5 pages for large projects (>15 pages). Ask the user to confirm after each batch.
+Para projetos grandes (>15 páginas), trabalha em lotes de 3-5 páginas e pede confirmação após cada lote.
 
-### Step 4: Finalize
+### Etapa 4: Finalizar
 
-Complete the appendix files:
-- `prd/appendix/enum-dictionary.md` — all enums and status codes found
-- `prd/appendix/api-inventory.md` — consolidated API reference
-- `prd/appendix/page-relationships.md` — navigation and data coupling map
+Completa os arquivos de apêndice:
+- `prd/appendix/enum-dictionary.md` — todos os enums e códigos de status encontrados
+- `prd/appendix/api-inventory.md` — referência consolidada de APIs
+- `prd/appendix/page-relationships.md` — mapa de navegação e acoplamento de dados
 
-Clean up the temporary analysis file:
+Remove o arquivo de análise temporário:
 ```bash
 rm .code-to-prd-analysis.json
 ```
 
-## Output
+## Saída
 
-A `prd/` directory containing:
-- `README.md` — system overview, module map, page inventory
-- `pages/*.md` — one file per page with fields, interactions, APIs
-- `appendix/*.md` — enum dictionary, API inventory, page relationships
+Um diretório `prd/` contendo:
+- `README.md` — visão geral do sistema, mapa de módulos, inventário de páginas
+- `pages/*.md` — um arquivo por página com campos, interações e APIs
+- `appendix/*.md` — dicionário de enums, inventário de APIs, relacionamentos entre páginas
 
-## Skill Reference
+## Referência de Skill
 
 - `product-team/code-to-prd/SKILL.md`
 - `product-team/code-to-prd/scripts/codebase_analyzer.py`

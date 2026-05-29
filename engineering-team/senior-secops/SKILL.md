@@ -1,7 +1,6 @@
 ---
 name: "senior-secops"
 description: "Skill de engenheiro SecOps sênior para segurança de aplicações, gerenciamento de vulnerabilidades, verificação de conformidade e práticas de desenvolvimento seguro. Executa scans SAST/DAST, gera planos de remediação de CVEs, verifica vulnerabilidades de dependências, cria políticas de segurança, impõe padrões de codificação segura e automatiza verificações de conformidade contra SOC2, PCI-DSS, LGPD/ANVISA e LGPD. Use ao conduzir uma revisão ou auditoria de segurança, responder a um CVE ou incidente de segurança, fortalecer infraestrutura, implementar autenticação ou gerenciamento de segredos, preparar para testes de penetração, verificar exposição ao OWASP Top 10 ou impor controles de segurança em pipelines CI/CD."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

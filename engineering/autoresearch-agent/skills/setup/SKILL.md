@@ -2,7 +2,6 @@
 name: "setup"
 description: "Configurar um novo experimento de autoresearch de forma interativa. Coleta domínio, arquivo alvo, comando de avaliação, métrica, direção e avaliador."
 command: /ar:setup
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

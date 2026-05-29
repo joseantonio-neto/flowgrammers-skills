@@ -1,7 +1,6 @@
 ---
 name: "spec-driven-workflow"
 description: "Use quando o usuário pede para escrever specs antes do código, definir critérios de aceitação, planejar funcionalidades antes da implementação, gerar testes a partir de especificações, ou seguir práticas de desenvolvimento spec-first."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

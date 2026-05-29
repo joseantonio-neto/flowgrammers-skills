@@ -1,7 +1,6 @@
 ---
 name: "sql-database-assistant"
 description: "Use quando o usuário pede para escrever queries SQL, otimizar desempenho de banco de dados, gerar migrações, explorar esquemas de banco de dados, ou trabalhar com ORMs como Prisma, Drizzle, TypeORM ou SQLAlchemy."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

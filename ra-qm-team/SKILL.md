@@ -2,7 +2,6 @@
 name: "ra-qm-skills"
 description: "12 skills e plugins de agentes para Assuntos Regulatórios e Gestão da Qualidade no Claude Code. Cobre ISO 13485 QMS, MDR 2017/745, FDA 510(k)/PMA, ISO 27001 ISMS, LGPD/DSGVO, gestão de riscos (ISO 14971), CAPA, controle de documentos e auditoria — para o mercado brasileiro e internacional. Python tools (somente stdlib)."
 version: 1.0.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags:
   - regulatory

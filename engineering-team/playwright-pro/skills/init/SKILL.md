@@ -4,7 +4,6 @@ description: >-
   Configure o Playwright em um projeto. Use quando o usuário disser "configurar playwright",
   "adicionar testes e2e", "configurar playwright", "setup de testes", "iniciar playwright"
   ou "adicionar infraestrutura de testes".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

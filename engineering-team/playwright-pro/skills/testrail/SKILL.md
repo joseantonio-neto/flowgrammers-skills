@@ -4,7 +4,6 @@ description: >-
   Sincronizar testes com TestRail. Use quando o usuário mencionar "testrail", "gestão de testes",
   "casos de teste", "execução de testes", "sincronizar casos de teste", "enviar resultados para testrail"
   ou "importar do testrail".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

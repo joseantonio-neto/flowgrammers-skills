@@ -1,7 +1,6 @@
 ---
 name: "database-designer"
 description: "Use quando o usuário pedir para projetar schemas de banco de dados, planejar migrações de dados, otimizar queries, escolher entre SQL e NoSQL, ou modelar relacionamentos de dados."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,7 +1,6 @@
 ---
 name: "codebase-onboarding"
 description: "Onboarding de Base de Código — analisa um repositório e gera documentação de integração para engenheiros, tech leads e contratados, com descoberta de arquitetura e stack, inventário de arquivos-chave e orientação de configuração local."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

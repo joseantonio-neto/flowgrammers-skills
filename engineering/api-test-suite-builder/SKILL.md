@@ -1,7 +1,6 @@
 ---
 name: "api-test-suite-builder"
 description: "Use quando o usuário pede para gerar testes de API, criar suites de testes de integração, testar endpoints REST ou construir testes de contrato."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

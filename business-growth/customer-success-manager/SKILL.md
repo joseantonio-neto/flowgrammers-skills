@@ -2,7 +2,6 @@
 name: "customer-success-manager"
 description: Monitora saúde do cliente, prevê risco de churn e identifica oportunidades de expansão usando modelos de pontuação ponderada para sucesso do cliente SaaS. Use ao analisar contas de clientes, revisar métricas de retenção, pontuar clientes em risco, ou quando o usuário mencionar churn, pontuações de saúde do cliente, oportunidades de upsell, receita de expansão, análise de retenção ou análise de clientes. Executa três ferramentas Python CLI para produzir pontuações de saúde determinísticas, tiers de risco de churn e recomendações de expansão priorizadas em segmentos Enterprise, Mid-Market e PME.
 license: MIT
-author: Ric Neves - Flowgrammers
 metadata:
   version: 1.0.0
   category: business-growth

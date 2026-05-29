@@ -1,7 +1,6 @@
 ---
 name: "api-design-reviewer"
 description: "Revisão e análise completa de designs de API com foco em convenções REST, melhores práticas e padrões da indústria. Fornece linting automatizado, detecção de mudanças disruptivas e scorecards de design."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -2,7 +2,6 @@
 name: "marketing-skills"
 description: "42 skills e plugins de marketing para agentes Claude Code. 7 pods: conteúdo, SEO, CRO, canais, crescimento, inteligência, vendas. Contexto base + roteador de orquestração. 27 ferramentas Python (somente stdlib)."
 version: 2.0.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags:
   - marketing

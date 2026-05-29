@@ -1,7 +1,6 @@
 ---
 name: "agent-designer"
 description: "Use quando o usuário pede para projetar sistemas multi-agente, criar arquiteturas de agentes, definir padrões de comunicação entre agentes ou construir workflows de agentes autônomos."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,38 +1,38 @@
 ---
 name: karpathy-check
-description: Run Karpathy's 4-principle review on staged changes or the last commit. Checks complexity, diff noise, hidden assumptions, and goal verification. Usage /karpathy-check [--last-commit]
+description: Revisa as alterações em stage (ou o último commit) com base nos 4 princípios de codificação do Karpathy. Verifica complexidade, ruído no diff, suposições ocultas e verificação de objetivos. Uso: /karpathy-check [--last-commit]
 ---
 
 # /karpathy-check
 
-Review your staged changes (or last commit) against Karpathy's 4 coding principles.
+Revisa suas alterações em stage (ou o último commit) com base nos 4 princípios de codificação do Karpathy.
 
-## Usage
+## Uso
 
 ```
-/karpathy-check                 # review staged changes
-/karpathy-check --last-commit   # review the most recent commit
+/karpathy-check                 # revisa alterações em stage
+/karpathy-check --last-commit   # revisa o commit mais recente
 ```
 
-## What it runs
+## O que executa
 
-1. **Principle #2 (Simplicity):** `scripts/complexity_checker.py` on all changed files — detects over-engineering, premature abstractions, deep nesting, long functions
-2. **Principle #3 (Surgical):** `scripts/diff_surgeon.py` on the diff — detects comment-only changes, whitespace noise, style drift, drive-by refactors
-3. **Principles #1 + #4 (Think + Goals):** The `karpathy-reviewer` agent reads the diff and applies human-judgment checks — hidden assumptions, missing verification
+1. **Princípio #2 (Simplicidade):** `scripts/complexity_checker.py` em todos os arquivos alterados — detecta over-engineering, abstrações prematuras, aninhamento profundo, funções longas
+2. **Princípio #3 (Cirúrgico):** `scripts/diff_surgeon.py` no diff — detecta alterações apenas em comentários, ruído de espaços em branco, desvio de estilo, refatorações oportunistas
+3. **Princípios #1 + #4 (Pensar + Objetivos):** O agente `karpathy-reviewer` lê o diff e aplica verificações de julgamento humano — suposições ocultas, verificação ausente
 
-## Output
+## Saída
 
-A structured report with per-principle verdicts and specific line-level fix recommendations.
+Um relatório estruturado com veredictos por princípio e recomendações específicas de correção por linha.
 
-## When to run
+## Quando executar
 
-- Before committing (catches noise and overcomplication early)
-- After completing a feature (sanity check before PR)
-- When you suspect the LLM overcoded something
+- Antes de commitar (detecta ruído e complicações desnecessárias cedo)
+- Após completar uma feature (verificação de sanidade antes do PR)
+- Quando você suspeita que o LLM produziu código em excesso
 
-## Sub-agent
+## Sub-agente
 
-Dispatches the `karpathy-reviewer` agent. See `agents/karpathy-reviewer.md`.
+Despacha o agente `karpathy-reviewer`. Veja `agents/karpathy-reviewer.md`.
 
 ## Scripts
 
@@ -41,6 +41,6 @@ Dispatches the `karpathy-reviewer` agent. See `agents/karpathy-reviewer.md`.
 - `engineering/karpathy-coder/scripts/assumption_linter.py`
 - `engineering/karpathy-coder/scripts/goal_verifier.py`
 
-## Skill Reference
+## Referência de Skill
 
 → `engineering/karpathy-coder/SKILL.md`

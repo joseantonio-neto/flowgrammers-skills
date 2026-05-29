@@ -1,32 +1,32 @@
 ---
 name: competitive-matrix
-description: Build competitive analysis matrices with scoring and gap analysis. Usage: /competitive-matrix <analyze> [options]
+description: Constrói matrizes de análise competitiva com pontuação e análise de lacunas. Uso: /competitive-matrix <analyze> [opções]
 ---
 
 # /competitive-matrix
 
-Build competitive matrices with weighted scoring, gap analysis, and market positioning insights.
+Constrói matrizes competitivas com pontuação ponderada, análise de lacunas e insights de posicionamento de mercado.
 
-## Usage
+## Uso
 
 ```
-/competitive-matrix analyze <competitors.json>                    Full analysis
-/competitive-matrix analyze <competitors.json> --weights pricing=2,ux=1.5    Custom weights
+/competitive-matrix analyze <competitors.json>                         Análise completa
+/competitive-matrix analyze <competitors.json> --weights pricing=2,ux=1.5    Pesos customizados
 ```
 
-## Input Format
+## Formato de Entrada
 
 ```json
 {
-  "your_product": { "name": "MyApp", "scores": {"ux": 8, "pricing": 7, "features": 9} },
+  "your_product": { "name": "MeuApp", "scores": {"ux": 8, "pricing": 7, "features": 9} },
   "competitors": [
-    { "name": "Competitor A", "scores": {"ux": 7, "pricing": 9, "features": 6} }
+    { "name": "Concorrente A", "scores": {"ux": 7, "pricing": 9, "features": 6} }
   ],
   "dimensions": ["ux", "pricing", "features"]
 }
 ```
 
-## Examples
+## Exemplos
 
 ```
 /competitive-matrix analyze competitors.json
@@ -34,7 +34,7 @@ Build competitive matrices with weighted scoring, gap analysis, and market posit
 ```
 
 ## Scripts
-- `product-team/competitive-teardown/scripts/competitive_matrix_builder.py` — Matrix builder
+- `product-team/competitive-teardown/scripts/competitive_matrix_builder.py` — Construtor de matriz competitiva
 
-## Skill Reference
+## Referência de Skill
 → `product-team/competitive-teardown/SKILL.md`

@@ -1,7 +1,6 @@
 ---
 name: "browser-automation"
 description: "Use quando o usuário pedir para automatizar tarefas no navegador, fazer scraping de sites, preencher formulários, capturar screenshots, extrair dados estruturados de páginas web ou construir workflows de automação web. NÃO para testes — use playwright-pro para isso."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

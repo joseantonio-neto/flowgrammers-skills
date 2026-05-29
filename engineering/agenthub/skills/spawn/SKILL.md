@@ -2,7 +2,6 @@
 name: "spawn"
 description: "Lançar N subagentes paralelos em git worktrees isolados para competir na tarefa da sessão."
 command: /hub:spawn
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

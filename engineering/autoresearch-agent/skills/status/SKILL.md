@@ -2,7 +2,6 @@
 name: "status"
 description: "Mostrar painel de experimentos com resultados, loops ativos e progresso."
 command: /ar:status
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

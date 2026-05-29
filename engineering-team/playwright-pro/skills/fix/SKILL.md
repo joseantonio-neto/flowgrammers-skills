@@ -4,7 +4,6 @@ description: >-
   Corrija testes Playwright com falha ou instáveis. Use quando o usuário disser "corrigir teste",
   "teste instável", "teste falhando", "depurar teste", "teste quebrado", "teste passa
   às vezes" ou "falha intermitente".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

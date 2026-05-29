@@ -1,7 +1,6 @@
 ---
 name: "self-improving-agent"
 description: "Curar a auto-memória do Claude Code em conhecimento duradouro de projeto. Analisa MEMORY.md em busca de padrões, promove aprendizados comprovados para CLAUDE.md e .claude/rules/, extrai soluções recorrentes em skills reutilizáveis. Use quando: (1) revisando o que o Claude aprendeu sobre seu projeto, (2) graduando um padrão de notas para regras aplicadas, (3) transformando uma solução de debugging em uma skill, (4) verificando saúde e capacidade da memória."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,7 +1,6 @@
 ---
 name: "secrets-vault-manager"
 description: "Use quando o usuário pede para configurar infraestrutura de gerenciamento de segredos, integrar o HashiCorp Vault, configurar armazenamentos de segredos em nuvem (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager), implementar rotação de segredos ou auditar padrões de acesso a segredos."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

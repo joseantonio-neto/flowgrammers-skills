@@ -2,7 +2,6 @@
 name: "run"
 description: "Comando de ciclo de vida completo que encadeia init → baseline → spawn → eval → merge em uma única invocação."
 command: /hub:run
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

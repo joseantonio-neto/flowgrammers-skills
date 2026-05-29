@@ -1,7 +1,6 @@
 ---
 name: "contract-and-proposal-writer"
 description: "Gerador de contratos e propostas comerciais para o mercado brasileiro. Contratos de prestação de serviço, proposta comercial, SOW, NDA, MSA — todos adaptados à legislação brasileira (Código Civil, CLT, LGPD). Use quando precisar criar contratos de desenvolvimento, propostas para clientes, acordos de confidencialidade, contratos de consultoria ou contratos de parceria comercial."
-author: Ric Neves - Flowgrammers
 license: MIT
 agents:
   - claude-code

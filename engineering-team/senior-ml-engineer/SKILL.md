@@ -1,7 +1,6 @@
 ---
 name: "senior-ml-engineer"
 description: "Skill de engenharia de ML para colocar modelos em produção, construir pipelines MLOps e integrar LLMs. Cobre implantação de modelos, feature stores, monitoramento de drift, sistemas RAG e otimização de custos. Use quando o usuário perguntar sobre implantar modelos de ML em produção, configurar infraestrutura MLOps (MLflow, Kubeflow, Kubernetes, Docker), monitorar performance ou drift de modelos, construir pipelines RAG ou integrar APIs de LLM com lógica de retry e controles de custo."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

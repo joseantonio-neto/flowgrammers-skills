@@ -2,7 +2,6 @@
 name: "finance-skills"
 description: "Skill de agente de analista financeiro para Claude Code. Análise de índices, avaliação DCF, variação orçamentária, previsões contínuas. 4 ferramentas Python (somente stdlib)."
 version: 1.0.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags:
   - finance

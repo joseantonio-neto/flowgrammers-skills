@@ -1,25 +1,25 @@
 ---
 name: sprint-plan
-description: Sprint planning shortcut. Usage: /sprint-plan <goal> [capacity]
+description: Atalho para planejamento de sprint. Uso: /sprint-plan <objetivo> [capacidade]
 ---
 
 # /sprint-plan
 
-Create a sprint plan with prioritized stories and capacity guardrails.
+Cria um plano de sprint com stories priorizadas e limites de capacidade.
 
-## Usage
+## Uso
 
 ```bash
-/sprint-plan <goal> [capacity]
+/sprint-plan <objetivo> [capacidade]
 ```
 
-## Output Structure
+## Estrutura da Saída
 
-- Sprint goal
-- Committed scope
-- Stretch scope
-- Risks and dependencies
-- Story-level acceptance criteria checks
+- Objetivo do sprint
+- Escopo comprometido
+- Escopo stretch
+- Riscos e dependências
+- Verificações de critérios de aceite por story
 
-## Skill Reference
+## Referência de Skill
 - `product-team/agile-product-owner/SKILL.md`

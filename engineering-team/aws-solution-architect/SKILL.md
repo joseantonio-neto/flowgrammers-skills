@@ -1,7 +1,6 @@
 ---
 name: "aws-solution-architect"
 description: Projete arquiteturas AWS para startups usando padrões serverless e templates de IaC. Use ao projetar arquitetura serverless, criar templates CloudFormation, otimizar custos AWS, configurar pipelines CI/CD ou migrar para AWS. Cobre Lambda, API Gateway, DynamoDB, ECS, Aurora e otimização de custos.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

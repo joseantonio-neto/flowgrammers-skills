@@ -1,7 +1,6 @@
 ---
 name: "incident-commander"
 description: "Skill de Comandante de Incidentes para gerenciar resposta a incidentes tecnológicos, desde a detecção até a resolução e revisão pós-incidente. Cobre classificação de severidade, reconstrução de linha do tempo e geração de PIR."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

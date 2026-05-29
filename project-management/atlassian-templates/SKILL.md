@@ -1,7 +1,6 @@
 ---
 name: "atlassian-templates"
 description: Especialista em criação e modificação de templates e arquivos Atlassian para criação, modificação e gestão de templates Jira e Confluence, blueprints, layouts personalizados, componentes reutilizáveis e estruturas de conteúdo padronizadas. Use ao construir templates em toda a organização, blueprints personalizados, layouts de página e geração automatizada de conteúdo.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

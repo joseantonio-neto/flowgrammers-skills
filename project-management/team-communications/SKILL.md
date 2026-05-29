@@ -1,7 +1,6 @@
 ---
 name: team-communications
 description: Escreve comunicações internas da empresa — atualizações 3P (Progresso/Planos/Problemas), newsletters corporativas, resumos de FAQ, relatórios de incidentes, atualizações de liderança, relatórios de status, atualizações de projeto e comunicações internas em geral. Use esta skill sempre que o usuário solicitar redigir, editar ou formatar algo destinado a audiências internas. Acione com palavras-chave como "3P", "atualização semanal", "newsletter", "FAQ", "comunicação interna", "relatório de status", "atualização da empresa", "atualização da equipe", "relatório de incidente" ou qualquer solicitação de resumir trabalho para liderança, colegas ou a empresa em geral. Mesmo solicitações casuais como "escreva minha atualização" ou "resuma o que minha equipe fez essa semana" devem acionar esta skill.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,30 +1,30 @@
 ---
 name: pipeline
-description: Detect stack and generate CI/CD pipeline configs. Usage: /pipeline <detect|generate> [options]
+description: Detecta o stack e gera configurações de pipeline CI/CD. Uso: /pipeline <detect|generate> [opções]
 ---
 
 # /pipeline
 
-Detect project stack and generate CI/CD pipeline configurations for GitHub Actions or GitLab CI.
+Detecta o stack do projeto e gera configurações de pipeline CI/CD para GitHub Actions ou GitLab CI.
 
-## Usage
-
-```
-/pipeline detect [--repo <project-dir>]               Detect stack, tools, and services
-/pipeline generate --platform github|gitlab [--repo <project-dir>]  Generate pipeline YAML
-```
-
-## Examples
+## Uso
 
 ```
-/pipeline detect --repo ./my-project
+/pipeline detect [--repo <diretório>]                       Detecta stack, ferramentas e serviços
+/pipeline generate --platform github|gitlab [--repo <dir>]  Gera YAML do pipeline
+```
+
+## Exemplos
+
+```
+/pipeline detect --repo ./meu-projeto
 /pipeline generate --platform github --repo .
 /pipeline generate --platform gitlab --repo .
 ```
 
 ## Scripts
-- `engineering/ci-cd-pipeline-builder/scripts/stack_detector.py` — Detect stack and tooling (`--repo <path>`, `--format text|json`)
-- `engineering/ci-cd-pipeline-builder/scripts/pipeline_generator.py` — Generate pipeline YAML (`--platform github|gitlab`, `--repo <path>`, `--input <stack.json>`, `--output <file>`)
+- `engineering/ci-cd-pipeline-builder/scripts/stack_detector.py` — Detecta stack e ferramentas (`--repo <caminho>`, `--format text|json`)
+- `engineering/ci-cd-pipeline-builder/scripts/pipeline_generator.py` — Gera YAML do pipeline (`--platform github|gitlab`, `--repo <caminho>`, `--input <stack.json>`, `--output <arquivo>`)
 
-## Skill Reference
+## Referência de Skill
 → `engineering/ci-cd-pipeline-builder/SKILL.md`

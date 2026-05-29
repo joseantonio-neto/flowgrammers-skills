@@ -2,7 +2,6 @@
 name: "self-eval"
 description: "Avalie honestamente a qualidade do trabalho de IA usando um sistema de pontuação em dois eixos. Use após concluir uma tarefa, revisão de código ou sessão de trabalho para obter uma avaliação imparcial. Detecta inflação de pontuação, força raciocínio do advogado do diabo e persiste pontuações entre sessões."
 license: "MIT"
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

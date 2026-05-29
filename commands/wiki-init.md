@@ -1,60 +1,60 @@
 ---
 name: wiki-init
-description: Bootstrap a fresh LLM Wiki vault with the three-layer structure, schema files, and starter templates. Usage /wiki-init <path> --topic "<topic>" [--tool all|claude-code|codex|cursor|antigravity]
+description: Inicializa um novo vault LLM Wiki com estrutura em três camadas, arquivos de esquema e templates iniciais. Uso: /wiki-init <caminho> --topic "<tópico>" [--tool all|claude-code|codex|cursor|antigravity]
 ---
 
 # /wiki-init
 
-Bootstrap a new LLM Wiki vault. Creates `raw/`, `wiki/{entities,concepts,sources,comparisons,synthesis}`, the index and log, and installs the schema file(s) for your LLM CLI of choice.
+Inicializa um novo vault LLM Wiki. Cria `raw/`, `wiki/{entities,concepts,sources,comparisons,synthesis}`, o índice e o log, e instala os arquivos de esquema para a CLI de LLM escolhida.
 
-## Usage
-
-```
-/wiki-init <path> --topic "<one-line topic>"
-/wiki-init <path> --topic "<topic>" --tool <claude-code|codex|cursor|antigravity|opencode|gemini-cli|all>
-/wiki-init <path> --topic "<topic>" --force    # overwrite non-empty dir
-```
-
-## Examples
+## Uso
 
 ```
-/wiki-init ~/vaults/research --topic "LLM interpretability"
-/wiki-init ./book-wiki --topic "The Power Broker — Robert Caro" --tool all
-/wiki-init ~/vaults/founders --topic "SaaS founder playbook" --tool codex
+/wiki-init <caminho> --topic "<tópico em uma linha>"
+/wiki-init <caminho> --topic "<tópico>" --tool <claude-code|codex|cursor|antigravity|opencode|gemini-cli|all>
+/wiki-init <caminho> --topic "<tópico>" --force    # sobrescreve diretório não vazio
 ```
 
-## What it creates
+## Exemplos
 
 ```
-<path>/
+/wiki-init ~/vaults/pesquisa --topic "Interpretabilidade de LLMs"
+/wiki-init ./wiki-livro --topic "The Power Broker — Robert Caro" --tool all
+/wiki-init ~/vaults/fundadores --topic "Playbook de fundadores SaaS" --tool codex
+```
+
+## O que cria
+
+```
+<caminho>/
 ├── raw/
 │   └── assets/
 ├── wiki/
-│   ├── index.md              # from template
-│   ├── log.md                # from template
+│   ├── index.md              # a partir do template
+│   ├── log.md                # a partir do template
 │   ├── entities/
 │   ├── concepts/
 │   ├── sources/
 │   ├── comparisons/
 │   ├── synthesis/
-│   └── .templates/           # page templates for reference
-├── CLAUDE.md                 # if --tool claude-code or all
-├── AGENTS.md                 # if --tool codex|cursor|antigravity|opencode|gemini-cli|all
-├── .cursorrules              # if --tool cursor or all
+│   └── .templates/           # templates de página para referência
+├── CLAUDE.md                 # se --tool claude-code ou all
+├── AGENTS.md                 # se --tool codex|cursor|antigravity|opencode|gemini-cli|all
+├── .cursorrules              # se --tool cursor ou all
 └── .gitignore
 ```
 
-## Next steps
+## Próximos passos
 
-After init:
-1. Open the vault in Obsidian
-2. Drop a source into `raw/`
-3. Run `/wiki-ingest raw/<your-file>`
+Após inicializar:
+1. Abra o vault no Obsidian
+2. Coloque uma fonte em `raw/`
+3. Execute `/wiki-ingest raw/<seu-arquivo>`
 
 ## Script
 
 - `engineering/llm-wiki/scripts/init_vault.py`
 
-## Skill Reference
+## Referência de Skill
 
 → `engineering/llm-wiki/SKILL.md`

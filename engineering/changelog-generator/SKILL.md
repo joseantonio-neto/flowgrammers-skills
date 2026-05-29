@@ -1,7 +1,6 @@
 ---
 name: "changelog-generator"
 description: "Gerador de Changelog — produz notas de versão consistentes e auditáveis a partir de Conventional Commits, com detecção de bump semântico e renderização de seções Keep a Changelog."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

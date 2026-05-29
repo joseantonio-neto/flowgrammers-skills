@@ -1,7 +1,6 @@
 ---
 name: "senior-architect"
 description: "Esta skill deve ser usada quando o usuário pedir para 'design system architecture', 'evaluate microsserviços vs monólito', 'create architecture diagrams', 'analyze dependências', 'choose a database', 'plan for escalabilidade', 'make technical decisions', or 'review system design'. Use para registros de decisão arquitetural (ADRs), avaliação de stack tecnológico, revisões de design de sistema, análise de dependências e geração de diagramas de arquitetura nos formatos Mermaid, PlantUML ou ASCII."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

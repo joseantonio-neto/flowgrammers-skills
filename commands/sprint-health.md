@@ -1,20 +1,20 @@
 ---
 name: sprint-health
-description: Sprint health scoring and velocity analysis for agile teams. Usage: /sprint-health <analyze|velocity> [options]
+description: Pontuação de saúde de sprint e análise de velocidade para times ágeis. Uso: /sprint-health <analyze|velocity> [opções]
 ---
 
 # /sprint-health
 
-Score sprint health across delivery, quality, and team metrics with velocity trend analysis.
+Pontua a saúde do sprint em entrega, qualidade e métricas de time, com análise de tendência de velocidade.
 
-## Usage
+## Uso
 
 ```
-/sprint-health analyze <sprint_data.json>                    Full sprint health score
-/sprint-health velocity <sprint_data.json>                   Velocity trend analysis
+/sprint-health analyze <sprint_data.json>                    Pontuação completa de saúde do sprint
+/sprint-health velocity <sprint_data.json>                   Análise de tendência de velocidade
 ```
 
-## Input Format
+## Formato de Entrada
 
 ```json
 {
@@ -22,22 +22,22 @@ Score sprint health across delivery, quality, and team metrics with velocity tre
   "committed_points": 34,
   "completed_points": 29,
   "stories": {"total": 12, "completed": 10, "carried_over": 2},
-  "blockers": [{"description": "API dependency", "days_blocked": 3}],
+  "blockers": [{"description": "Dependência de API", "days_blocked": 3}],
   "ceremonies": {"planning": true, "daily": true, "review": true, "retro": true}
 }
 ```
 
-## Examples
+## Exemplos
 
 ```
 /sprint-health analyze sprint-24.json
-/sprint-health velocity last-6-sprints.json
+/sprint-health velocity ultimos-6-sprints.json
 /sprint-health analyze sprint-24.json --format json
 ```
 
 ## Scripts
-- `project-management/scrum-master/scripts/sprint_health_scorer.py` — Sprint health scorer (`<data_file> [--format text|json]`)
-- `project-management/scrum-master/scripts/velocity_analyzer.py` — Velocity analyzer (`<data_file> [--format text|json]`)
+- `project-management/scrum-master/scripts/sprint_health_scorer.py` — Pontuador de saúde de sprint (`<arquivo_dados> [--format text|json]`)
+- `project-management/scrum-master/scripts/velocity_analyzer.py` — Analisador de velocidade (`<arquivo_dados> [--format text|json]`)
 
-## Skill Reference
+## Referência de Skill
 > `project-management/scrum-master/SKILL.md`

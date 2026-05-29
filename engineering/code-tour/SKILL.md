@@ -1,7 +1,6 @@
 ---
 name: "code-tour"
 description: "Use quando o usuário pedir para criar um arquivo CodeTour .tour — walkthroughs passo a passo direcionados a personas que linkam para arquivos reais e números de linha. Gatilho para: criar um tour, tour de integração, tour de arquitetura, tour de revisão de PR, explicar como X funciona, vibe check, tour de RCA, guia do contribuidor, ou qualquer solicitação de walkthrough de código estruturado."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

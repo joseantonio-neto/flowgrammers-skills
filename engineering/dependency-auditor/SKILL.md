@@ -1,7 +1,6 @@
 ---
 name: "dependency-auditor"
 description: "Auditor de Dependências — analisa, audita e gerencia dependências em projetos multi-linguagem, identificando vulnerabilidades, garantindo conformidade de licença, otimizando árvores de dependência e planejando atualizações seguras."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

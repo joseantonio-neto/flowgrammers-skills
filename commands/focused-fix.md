@@ -1,91 +1,91 @@
 ---
 name: focused-fix
-description: Deep-dive feature repair — systematically fix an entire feature/module across all its files and dependencies. Usage: /focused-fix <feature-path>
+description: Correção profunda de feature — repara sistematicamente uma feature/módulo inteiro em todos os seus arquivos e dependências. Uso: /focused-fix <caminho-da-feature>
 ---
 
 # /focused-fix
 
-Systematically repair an entire feature or module using the 5-phase protocol. Target: `$ARGUMENTS` (a feature path or module name).
+Repara sistematicamente uma feature ou módulo inteiro usando o protocolo de 5 fases. Alvo: `$ARGUMENTS` (caminho de feature ou nome de módulo).
 
-If `$ARGUMENTS` is empty, ask the user which feature/module to fix.
+Se `$ARGUMENTS` estiver vazio, pergunte ao usuário qual feature/módulo corrigir.
 
-## Protocol — Execute ALL 5 Phases IN ORDER
+## Protocolo — Execute TODAS as 5 Fases EM ORDEM
 
-### Phase 1: SCOPE — Map the Feature Boundary
+### Fase 1: ESCOPO — Mapeie o Limite da Feature
 
-1. Identify the primary folder/files for the target feature
-2. Read EVERY file in that folder — understand its purpose
-3. Create a feature manifest:
-
-```
-FEATURE SCOPE:
-  Primary path: <path>
-  Entry points: [files imported by other parts of the app]
-  Internal files: [files only used within this feature]
-  Total files: N
-```
-
-### Phase 2: TRACE — Map All Dependencies
-
-**INBOUND** (what this feature imports):
-- For every import statement, trace to source, verify it exists and is exported
-- Check env vars, config files, DB models, API endpoints, third-party packages
-
-**OUTBOUND** (what imports this feature):
-- Search entire codebase for imports from this feature
-- Verify consumers use correct API/interface
-
-Output a dependency map with inbound, outbound, env vars, and config files.
-
-### Phase 3: DIAGNOSE — Find Every Issue
-
-Run ALL diagnostic checks:
-
-- **Code**: imports resolve, no circular deps, types consistent, error handling, TODO/FIXME
-- **Runtime**: env vars set, migrations current, API shapes correct
-- **Tests**: run ALL related tests, record failures, check coverage
-- **Logs**: check git log for recent changes, search error logs
-- **Config**: validate config files, check dev/prod mismatches
-
-For each issue found:
-- Confirm root cause with evidence before adding to fix list
-- Assign risk: HIGH (public API, auth, >3 callers) / MED (internal with tests) / LOW (leaf module)
-
-Output a diagnosis report with issues grouped by severity.
-
-### Phase 4: FIX — Repair Systematically
-
-Fix in this EXACT order:
-1. **Dependencies** — broken imports, missing packages
-2. **Types** — type mismatches at boundaries
-3. **Logic** — business logic bugs
-4. **Tests** — fix or create tests for each fix
-5. **Integration** — verify end-to-end with consumers
-
-Rules:
-- Fix ONE issue at a time, run related test after each
-- If a fix breaks something else → go back to DIAGNOSE
-- Fix HIGH before MED before LOW
-- **3-Strike Rule**: If 3+ fixes create NEW issues, STOP. Tell the user the architecture may need rethinking, not patching.
-
-### Phase 5: VERIFY — Confirm Everything Works
-
-1. Run ALL tests in the feature folder
-2. Run ALL tests in files that import from this feature
-3. Run full test suite if available
-4. Summarize all changes made
-
-Output a completion report with files changed, fixes applied, test results, and consumers verified.
-
-## Iron Law
+1. Identifique a pasta/arquivos principais da feature alvo
+2. Leia TODOS os arquivos dessa pasta — entenda seu propósito
+3. Crie um manifesto da feature:
 
 ```
-NO FIXES WITHOUT COMPLETING SCOPE → TRACE → DIAGNOSE FIRST
+ESCOPO DA FEATURE:
+  Caminho principal: <caminho>
+  Pontos de entrada: [arquivos importados por outras partes do app]
+  Arquivos internos: [arquivos usados apenas dentro desta feature]
+  Total de arquivos: N
 ```
 
-If you haven't finished Phase 3, you cannot propose fixes.
+### Fase 2: RASTREAMENTO — Mapeie Todas as Dependências
 
-## Related Skills
+**ENTRADA** (o que esta feature importa):
+- Para cada instrução de importação, rastreie até a origem, verifique se existe e está exportada
+- Verifique variáveis de ambiente, arquivos de config, modelos de DB, endpoints de API, pacotes de terceiros
 
-- `engineering/focused-fix` — Full SKILL.md with detailed checklists, output templates, and anti-patterns
-- `superpowers:systematic-debugging` — For individual complex bugs found during Phase 3
+**SAÍDA** (o que importa desta feature):
+- Pesquise todo o codebase por importações desta feature
+- Verifique se os consumidores usam a API/interface correta
+
+Produza um mapa de dependências com entradas, saídas, variáveis de ambiente e arquivos de configuração.
+
+### Fase 3: DIAGNÓSTICO — Encontre Todos os Problemas
+
+Execute TODAS as verificações de diagnóstico:
+
+- **Código**: importações resolvidas, sem dependências circulares, tipos consistentes, tratamento de erros, TODO/FIXME
+- **Runtime**: variáveis de ambiente definidas, migrations atualizadas, shapes de API corretos
+- **Testes**: execute TODOS os testes relacionados, registre falhas, verifique cobertura
+- **Logs**: verifique git log para alterações recentes, pesquise logs de erro
+- **Config**: valide arquivos de config, verifique divergências entre dev e prod
+
+Para cada problema encontrado:
+- Confirme a causa raiz com evidências antes de adicionar à lista de correções
+- Atribua risco: ALTO (API pública, auth, >3 consumidores) / MÉDIO (interno com testes) / BAIXO (módulo folha)
+
+Produza um relatório de diagnóstico com problemas agrupados por severidade.
+
+### Fase 4: CORREÇÃO — Repare Sistematicamente
+
+Corrija nesta ORDEM EXATA:
+1. **Dependências** — importações quebradas, pacotes ausentes
+2. **Tipos** — incompatibilidades de tipo nas fronteiras
+3. **Lógica** — bugs de lógica de negócio
+4. **Testes** — corrija ou crie testes para cada correção
+5. **Integração** — verifique o fluxo completo com os consumidores
+
+Regras:
+- Corrija UM problema de cada vez, execute o teste relacionado após cada correção
+- Se uma correção quebrar outra coisa → volte ao DIAGNÓSTICO
+- Corrija ALTO antes de MÉDIO antes de BAIXO
+- **Regra dos 3 Erros**: Se 3+ correções gerarem NOVOS problemas, PARE. Informe ao usuário que a arquitetura pode precisar de replanejamento, não de remendos.
+
+### Fase 5: VERIFICAÇÃO — Confirme que Tudo Funciona
+
+1. Execute TODOS os testes na pasta da feature
+2. Execute TODOS os testes nos arquivos que importam desta feature
+3. Execute o suite completo de testes se disponível
+4. Resuma todas as alterações realizadas
+
+Produza um relatório de conclusão com arquivos alterados, correções aplicadas, resultados dos testes e consumidores verificados.
+
+## Lei de Ferro
+
+```
+SEM CORREÇÕES SEM COMPLETAR ESCOPO → RASTREAMENTO → DIAGNÓSTICO PRIMEIRO
+```
+
+Se você não completou a Fase 3, não pode propor correções.
+
+## Skills Relacionadas
+
+- `engineering/focused-fix` — SKILL.md completo com checklists detalhados, templates de saída e anti-padrões
+- `superpowers:systematic-debugging` — Para bugs complexos individuais encontrados durante a Fase 3

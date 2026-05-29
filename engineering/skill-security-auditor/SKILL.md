@@ -10,7 +10,6 @@ description: >
   permanece dentro dos limites da skill.
   Gatilhos: "auditar esta skill", "esta skill é segura", "escanear skill para segurança",
   "verificar skill antes de instalar", "verificação de segurança da skill", "scan de vulnerabilidade da skill".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

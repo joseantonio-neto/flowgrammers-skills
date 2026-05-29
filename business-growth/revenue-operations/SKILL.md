@@ -1,7 +1,6 @@
 ---
 name: "revenue-operations"
 description: Analisa saúde do pipeline de vendas, precisão de previsão de receita e métricas de eficiência go-to-market para otimização de receita SaaS. Use ao analisar cobertura do pipeline de vendas, prever receita, avaliar desempenho go-to-market, revisar métricas de vendas, avaliar análise de pipeline, rastrear precisão de previsão com MAPE, calcular eficiência GTM ou medir eficiência de vendas e unit economics para equipes SaaS.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,7 +1,6 @@
 ---
 name: "mcp-server-builder"
 description: "Construtor de servidores MCP. Use para projetar e entregar servidores MCP prontos para produção a partir de contratos de API, em vez de wrappers manuais de ferramentas. Foca em scaffolding rápido, qualidade de esquema, validação e evolução segura."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

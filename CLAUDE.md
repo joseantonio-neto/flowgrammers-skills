@@ -1,126 +1,133 @@
-# Flowgrammers Claude Code Skills 
+# Flowgrammers Claude Skills
 
-> **Biblioteca oficial de skills da Flowgrammers para Claude Code**
-> Autor: Ric Neves - Flowgrammers
-> 239+ skills prontas para produção | Contexto 100% brasileiro | Apenas Claude Code
+> **383+ skills prontas para produção · Contexto 100% brasileiro · Multi-plataforma**
 
 ---
 
 ## Como Usar
 
-### Carregar uma skill
+### Claude Code
 ```
-/read c-level-advisor/ceo-advisor/SKILL.md
-```
-
-### Pedir ao Claude para usar uma skill
-```
-Use a skill de CEO Advisor e me ajude a preparar minha apresentação para investidores.
-Atue como Senior Frontend e revise meu componente React.
-Como especialista em SEO, analise meu site para o mercado brasileiro.
+/read [dominio]/[sub-skill]/SKILL.md
 ```
 
-### Comandos slash (após instalar em ~/.claude/commands/)
+### Cursor
+Cole o conteúdo do SKILL.md desejado no `.cursorrules` ou em `.cursor/rules/[nome].md`
+
+### Codex / GitHub Copilot
+Inclua o conteúdo do SKILL.md no `AGENTS.md` do projeto ou passe como contexto de sistema
+
+### Windsurf
+Adicione nas instruções globais em **Windsurf Settings > AI Rules**
+
+### OpenClaw
+Carregue via `/skill` ou inclua no contexto do sistema
+
+---
+
+## Mapa de Domínios
+
+### Domínios Originais
+
+| Domínio | Pasta | Skills |
+|---------|-------|--------|
+| C-Level Advisory | `c-level-advisor/` | 37 |
+| Engineering Avançado | `engineering/` | 60 |
+| Engineering Team | `engineering-team/` | 54 |
+| Marketing Digital | `marketing-skill/` | 45 |
+| Product Team | `product-team/` | 18 |
+| Business Growth | `business-growth/` | 7 |
+| Project Management | `project-management/` | 10 |
+| Financeiro | `finance/` | 6 |
+| RA/QM Team | `ra-qm-team/` | 14 |
+
+### Novos Domínios (v2.2.0)
+
+| Domínio | Pasta | Sub-skills |
+|---------|-------|------------|
+| Conteúdo & Copy | `conteudo-copy/` | 10 |
+| Marketing, Vendas & Publicidade | `marketing-vendas/` | 10 |
+| Financeiro, Jurídico & Compliance | `financeiro-compliance/` | 10 |
+| Operações, RH & Gestão | `operacoes-rh/` | 10 |
+| Produto, E-commerce & SaaS | `produto-ecommerce/` | 10 |
+| Código, Dev & Automação | `codigo-automacao/` | 10 |
+| Carreira, Educação & Marca Pessoal | `carreira-educacao/` | 10 |
+| Rotina, Tarefas & Organização | `rotina-organizacao/` | 10 |
+| Design & Branding | `design-branding/` | 10 |
+| Jurídico & Advocacia | `juridico-advocacia/` | 10 |
+| Direção Criativa | `direcao-criativa/` | 10 |
+| Liderança & Equipes | `lideranca-equipes/` | 10 |
+| SEO, Analítica & Dados | `seo-analitica/` | 10 |
+
+### Skills de Produto
+
+| Skill | Pasta | O que faz |
+|-------|-------|-----------|
+| PRD Generator | `prd-generator/` | Transforma Product Brief em PRD completo (9 seções + Mermaid + SQL) |
+| SDD Generator | `sdd-generator/` | Decompõe PRD em specs executáveis para subagentes paralelos |
+| Segurança MVS | `seguranca-mvs/` | CISO virtual sênior — análise 360° de segurança mínima viável (LGPD, hardening, AppSec, IR) |
+
+---
+
+## Exemplos Rápidos
+
 ```
-/tdd    /prd    /sprint-plan    /saas-health    /tech-debt
+/read conteudo-copy/gerador-de-headlines/SKILL.md
+Preciso de 10 headlines para uma landing page de curso de vendas B2B, foco em dor do cliente.
+
+/read marketing-vendas/funil-vendas/SKILL.md
+Diagnóstico do meu funil: 1000 leads → 200 MQL → 50 SQL → 10 fechamentos. O que está errado?
+
+/read financeiro-compliance/conformidade-lgpd/SKILL.md
+Preciso adequar meu SaaS à LGPD. Temos base de 50k usuários e enviamos emails de marketing.
+
+/read prd-generator/SKILL.md
+[cole seu product brief aqui]
+
+/read sdd-generator/SKILL.md
+[cole seu PRD aqui para decompor em specs]
+
+/read seguranca-mvs/SKILL.md
+Preciso de um diagnóstico de segurança do meu SaaS: API pública, dados de saúde, 10k usuários, AWS.
 ```
 
 ---
 
-## Skills Brasileiras (Exclusivas)
-
-### Skills de Copy e Conteúdo (`skills-brasileiras/copy-e-conteudo/`)
-42 skills de copy otimizadas para o mercado brasileiro:
-- Headlines com framework AIDA
-- Hooks para Reels e TikTok
-- Linhas de assunto para email
-- Copy para WhatsApp
-- Títulos para YouTube (CTR alto)
-- Copy para Instagram Stories
-- E mais 36 skills...
-
-### Skills de Marketing (`skills-brasileiras/marketing/`)
-30 skills de marketing focadas no Brasil:
-- Script de venda por WhatsApp
-- Funil de vendas completo
-- Estratégia de tráfego pago (Meta Ads, Google Ads)
-- Proposta comercial B2B
-- Mapeamento de jornada do cliente
-- E mais 25 skills...
-
----
-
-## Mapa Completo de Skills
-
-### C-Level Advisory (`c-level-advisor/`) — 34 skills
-CEO, CTO, CFO, COO, CPO, CMO, CRO, CISO, CHRO, Executive Mentor
-Chief of Staff (roteador automático), Board Meeting, Decision Logger
-
-**Como usar:**
-```
-/read c-level-advisor/chief-of-staff/SKILL.md
-Tenho uma decisão estratégica: devo abrir capital ou buscar investidor PE?
-```
-
-### Engineering Avançado (`engineering/`) — 45 skills
-RAG, MCP Server Builder, CI/CD, Observabilidade, Database Designer, PR Review
-
-### Engineering Team (`engineering-team/`) — 37 skills
-Senior Frontend (React/Next.js), Senior Backend, Senior DevOps, Senior QA
-Playwright Pro, TDD Guide, Code Reviewer, AWS/GCP/Azure Architect
-
-### Marketing (`marketing-skill/`) — 44 skills
-SEO (tradicional + AI SEO), CRO, Email Marketing, Paid Ads, Growth
-Content Strategy, Analytics, Competitor Analysis
-
-### Product Team (`product-team/`) — 16 skills
-Product Manager (RICE), Agile PO, UX Researcher, UI Design System
-Competitive Teardown, Landing Page Generator, SaaS Scaffolder
-
-### Business Growth (`business-growth/`) — 5 skills
-Customer Success Manager, Sales Engineer, Revenue Operations
-Contract & Proposal Writer
-
-### Project Management (`project-management/`) — 9 skills
-Senior PM, Scrum Master, Jira Expert, Confluence Expert
-
-### Finance (`finance/`) — 4 skills
-Financial Analyst (DCF), SaaS Metrics Coach (ARR/MRR/CAC/LTV), Business Investment Advisor
-
-### RA/QM Team (`ra-qm-team/`) — 14 skills
-ISO 13485, LGPD, ANVISA/FDA, ISO 27001, SOC2, Gestão de Riscos, CAPA
-
----
-
-## Contexto Brasileiro nas Skills
-
-Todas as skills foram adaptadas para o contexto brasileiro:
+## Contexto Brasileiro
 
 | Contexto | Skills Relevantes |
 |----------|------------------|
-| **LGPD** | ra-qm-team/gdpr-dsgvo-expert, ra-qm-team/information-security-manager-iso27001 |
-| **PIX** | business-growth/revenue-operations, finance/financial-analyst |
-| **WhatsApp Business** | skills-brasileiras/marketing, marketing-skill/email-sequence |
-| **NF-e / Fiscal** | finance/financial-analyst, business-growth/revenue-operations |
-| **CLT / PJ / MEI** | c-level-advisor/chro-advisor, business-growth/contract-and-proposal-writer |
-| **ANVISA** | ra-qm-team/fda-consultant-specialist, ra-qm-team/regulatory-affairs-head |
-| **Meta Ads BR** | marketing-skill/paid-ads, skills-brasileiras/marketing |
-| **Métricas em R$** | finance/saas-metrics-coach, business-growth/revenue-operations |
+| **LGPD / Cibersegurança** | `seguranca-mvs/`, `financeiro-compliance/conformidade-lgpd`, `juridico-advocacia/lgpd-juridico`, `seo-analitica/dados-lgpd` |
+| **PIX / Open Finance** | `financeiro-compliance/open-finance-pix` |
+| **CLT / PJ / MEI** | `operacoes-rh/clt-pj-mei`, `carreira-educacao/estrutura-freelancer` |
+| **NF-e / SPED** | `financeiro-compliance/impostos-br`, `financeiro-compliance/dre-balanco` |
+| **Meta Ads BR** | `marketing-vendas/funil-vendas`, `conteudo-copy/copy-de-anuncio` |
+| **WhatsApp Business** | `marketing-vendas/follow-up`, `marketing-vendas/script-vendas` |
+| **OAB / Advocacia** | `juridico-advocacia/` (domínio completo) |
+| **ANVISA** | `ra-qm-team/fda-consultant-specialist` |
 
 ---
 
-## Instalação dos Comandos Slash
+## Comandos Slash Disponíveis
 
-```bash
-mkdir -p ~/.claude/commands
-cp -r commands/* ~/.claude/commands/
+```
+/prd          /tdd          /sprint-plan    /saas-health
+/tech-debt    /okr          /retro          /code-to-prd
+/financial-health            /user-story     /rice
+/a11y-audit   /persona      /security-review /changelog
 ```
 
 ---
 
-## Sobre
+## Instalação
 
-Skills criadas e adaptadas pela **Flowgrammers** para o mercado brasileiro.
-- Site: flowgrammers.com
-- Autor: Ric Neves - Flowgrammers
-- Versão: 2.0.0 
+```bash
+curl -fsSL https://raw.githubusercontent.com/ricardonevesbraga/flowgrammers-skills/main/install.sh | bash
+```
+
+Ou manualmente:
+```bash
+git clone https://github.com/ricardonevesbraga/flowgrammers-skills.git
+cd flowgrammers-skills
+./install.sh
+```

@@ -1,7 +1,6 @@
 ---
 name: "google-workspace-cli"
 description: "Administração do Google Workspace via CLI gws. Instale, autentique e automatize Gmail, Drive, Sheets, Calendar, Docs, Chat e Tasks. Execute auditorias de segurança, use 43 receitas integradas e 10 pacotes de persona. Use para administração do Google Workspace, configuração da CLI gws, automação do Gmail, gerenciamento do Drive ou agendamento de Calendar."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

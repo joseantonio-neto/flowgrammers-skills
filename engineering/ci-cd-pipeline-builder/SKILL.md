@@ -1,7 +1,6 @@
 ---
 name: "ci-cd-pipeline-builder"
 description: "Construtor de Pipeline CI/CD — gera pipelines pragmáticos a partir de sinais detectados do stack do projeto, com estágios de lint, test, build e deploy, e suporte a GitHub Actions e GitLab CI."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

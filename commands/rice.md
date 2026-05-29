@@ -1,30 +1,30 @@
 ---
 name: rice
-description: RICE feature prioritization with scoring and capacity planning. Usage: /rice prioritize <features.csv> [options]
+description: Priorização de features com pontuação RICE e planejamento de capacidade. Uso: /rice prioritize <features.csv> [opções]
 ---
 
 # /rice
 
-Prioritize features using RICE scoring (Reach, Impact, Confidence, Effort) with optional capacity constraints.
+Prioriza features usando pontuação RICE (Reach, Impact, Confidence, Effort) com restrições opcionais de capacidade.
 
-## Usage
+## Uso
 
 ```
-/rice prioritize <features.csv>                              Score and rank features
-/rice prioritize <features.csv> --capacity 20                Rank with effort capacity limit
+/rice prioritize <features.csv>                              Pontua e classifica features
+/rice prioritize <features.csv> --capacity 20                Classifica com limite de esforço
 ```
 
-## Input Format
+## Formato de Entrada
 
 ```csv
 feature,reach,impact,confidence,effort
-Dark mode,5000,2,0.8,3
+Modo escuro,5000,2,0.8,3
 API v2,12000,3,0.9,8
-SSO integration,3000,2,0.7,5
-Mobile app,20000,3,0.5,13
+Integração SSO,3000,2,0.7,5
+App mobile,20000,3,0.5,13
 ```
 
-## Examples
+## Exemplos
 
 ```
 /rice prioritize features.csv
@@ -33,7 +33,7 @@ Mobile app,20000,3,0.5,13
 ```
 
 ## Scripts
-- `product-team/product-manager-toolkit/scripts/rice_prioritizer.py` — RICE prioritizer (`<input.csv> [--capacity N] [--output text|json|csv]`)
+- `product-team/product-manager-toolkit/scripts/rice_prioritizer.py` — Priorizador RICE (`<input.csv> [--capacity N] [--output text|json|csv]`)
 
-## Skill Reference
+## Referência de Skill
 > `product-team/product-manager-toolkit/SKILL.md`

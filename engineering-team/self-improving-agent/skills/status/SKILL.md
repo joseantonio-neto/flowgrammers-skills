@@ -1,7 +1,6 @@
 ---
 name: "status"
 description: "Painel de saúde da memória mostrando contagens de linhas, arquivos por tópico, capacidade, entradas desatualizadas e recomendações."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

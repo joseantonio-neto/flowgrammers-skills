@@ -1,7 +1,6 @@
 ---
 name: "senior-fullstack"
 description: "Kit de desenvolvimento fullstack com scaffolding de projetos para stacks Next.js, FastAPI, MERN e Django, análise de qualidade de código com scoring de segurança e complexidade, e orientação na seleção de stack. Use quando o usuário pedir para 'criar scaffolding de um novo projeto', 'criar um app Next.js', 'configurar FastAPI com React', 'analisar qualidade de código', 'auditar minha base de código', 'qual stack devo usar', 'gerar boilerplate de projeto' ou mencionar desenvolvimento fullstack, configuração de projeto ou comparação de tech stack."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

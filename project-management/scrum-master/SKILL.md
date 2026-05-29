@@ -2,7 +2,6 @@
 name: "scrum-master"
 description: "Skill avançada de Scrum Master para análise e coaching de equipes ágeis baseados em dados. Use quando o usuário perguntar sobre planejamento de sprint, rastreamento de velocidade, retrospectivas, facilitação de standup, grooming de backlog, story points, burndown charts, resolução de bloqueadores ou saúde de equipes ágeis. Executa scripts Python para analisar exportações JSON de sprint do Jira ou ferramentas similares: velocity_analyzer.py para previsão Monte Carlo de sprint, sprint_health_scorer.py para pontuação de saúde multidimensional e retrospective_analyzer.py para rastreamento de itens de ação e temas. Produz previsões com intervalo de confiança, relatórios de nota de saúde e tendências de velocidade de melhoria para equipes Scrum de alto desempenho."
 license: MIT
-author: Ric Neves - Flowgrammers
 metadata:
   version: 2.0.0
   category: project-management

@@ -4,7 +4,6 @@ description: >-
   Gere testes Playwright. Use quando o usuário disser "escrever testes", "gerar testes",
   "adicionar testes para", "testar este componente", "teste e2e", "criar teste para",
   "testar esta página" ou "testar esta funcionalidade".
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

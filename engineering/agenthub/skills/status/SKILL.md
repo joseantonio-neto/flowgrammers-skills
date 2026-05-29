@@ -2,7 +2,6 @@
 name: "status"
 description: "Mostrar estado do DAG, progresso dos agentes e status dos branches para uma sessão do AgentHub."
 command: /hub:status
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

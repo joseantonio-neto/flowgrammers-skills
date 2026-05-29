@@ -1,7 +1,6 @@
 ---
 name: "security-pen-testing"
 description: "Use quando o usuário pedir para realizar auditorias de segurança, testes de penetração, varredura de vulnerabilidades, verificações OWASP Top 10 ou avaliações de segurança ofensiva. Cobre análise estática, varredura de dependências, detecção de segredos, testes de segurança de API e geração de relatórios de pen test."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

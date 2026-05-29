@@ -1,7 +1,6 @@
 ---
 name: "senior-computer-vision"
 description: "Skill de engenharia de visão computacional para detecção de objetos, segmentação de imagens e sistemas de IA visual. Cobre arquiteturas CNN e Vision Transformer, detecção YOLO/Faster R-CNN/DETR, segmentação Mask R-CNN/SAM e implantação em produção com ONNX/TensorRT. Inclui frameworks PyTorch, torchvision, Ultralytics, Detectron2 e MMDetection. Use quando construir pipelines de detecção, treinar modelos personalizados, otimizar inferência ou implantar sistemas de visão."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

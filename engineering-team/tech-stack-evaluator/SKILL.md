@@ -1,7 +1,6 @@
 ---
 name: "tech-stack-evaluator"
 description: "Avaliação e comparação de stacks tecnológicos com análise TCO, avaliação de segurança e pontuação de saúde do ecossistema. Use ao comparar frameworks, avaliar stacks de tecnologia, calcular custo total de propriedade, avaliar caminhos de migração ou analisar viabilidade de ecossistema."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

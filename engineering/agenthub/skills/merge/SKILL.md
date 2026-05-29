@@ -2,7 +2,6 @@
 name: "merge"
 description: "Mergear o branch do agente vencedor no base, arquivar os perdedores e limpar os worktrees."
 command: /hub:merge
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---
@@ -61,7 +60,6 @@ Escrever `.agenthub/board/results/merge-summary.md`:
 
 ```markdown
 ---
-author: coordinator
 timestamp: {now}
 channel: results
 ---

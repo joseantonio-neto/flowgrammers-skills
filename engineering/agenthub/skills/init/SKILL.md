@@ -2,7 +2,6 @@
 name: "init"
 description: "Criar uma nova sessão de colaboração do AgentHub com tarefa, número de agentes e critérios de avaliação."
 command: /hub:init
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,20 +1,20 @@
 ---
 name: changelog
-description: Generate changelogs from git history and validate conventional commits. Usage: /changelog <generate|lint> [options]
+description: Gera changelogs a partir do histórico git e valida commits convencionais. Uso: /changelog <generate|lint> [opções]
 ---
 
 # /changelog
 
-Generate Keep a Changelog entries from git history and validate commit message format.
+Gera entradas de changelog no formato Keep a Changelog a partir do histórico git e valida o formato das mensagens de commit.
 
-## Usage
+## Uso
 
 ```
-/changelog generate [--from-tag <tag>] [--to-tag <tag>]    Generate changelog entries
-/changelog lint [--from-ref <ref>] [--to-ref <ref>]       Lint commit messages
+/changelog generate [--from-tag <tag>] [--to-tag <tag>]    Gera entradas de changelog
+/changelog lint [--from-ref <ref>] [--to-ref <ref>]        Valida mensagens de commit
 ```
 
-## Examples
+## Exemplos
 
 ```
 /changelog generate --from-tag v2.0.0
@@ -23,8 +23,8 @@ Generate Keep a Changelog entries from git history and validate commit message f
 ```
 
 ## Scripts
-- `engineering/changelog-generator/scripts/generate_changelog.py` — Parse commits, render changelog (`--from-tag`, `--to-tag`, `--from-ref`, `--to-ref`, `--format markdown|json`)
-- `engineering/changelog-generator/scripts/commit_linter.py` — Validate conventional commit format (`--from-ref`, `--to-ref`, `--strict`, `--format text|json`)
+- `engineering/changelog-generator/scripts/generate_changelog.py` — Processa commits e renderiza changelog (`--from-tag`, `--to-tag`, `--from-ref`, `--to-ref`, `--format markdown|json`)
+- `engineering/changelog-generator/scripts/commit_linter.py` — Valida formato de commit convencional (`--from-ref`, `--to-ref`, `--strict`, `--format text|json`)
 
-## Skill Reference
+## Referência de Skill
 → `engineering/changelog-generator/SKILL.md`

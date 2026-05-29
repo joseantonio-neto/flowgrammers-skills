@@ -1,58 +1,58 @@
 ---
 name: wiki-query
-description: Query the LLM Wiki — reads index.md first, drills into 3-10 relevant pages, synthesizes an answer with inline [[wikilink]] citations, and offers to file the answer back as a new comparison or synthesis page. Usage /wiki-query "<question>"
+description: Consulta o LLM Wiki — lê primeiro o index.md, aprofunda em 3 a 10 páginas relevantes, sintetiza uma resposta com citações [[wikilink]] e oferece registrar a resposta como nova página de comparação ou síntese. Uso: /wiki-query "<pergunta>"
 ---
 
 # /wiki-query
 
-Ask the wiki a question. The librarian reads `index.md` first, picks relevant pages across categories, synthesizes an answer with citations, and offers to file the answer back into the wiki so your explorations compound.
+Faça uma pergunta ao wiki. O bibliotecário lê primeiro `index.md`, seleciona páginas relevantes entre categorias, sintetiza uma resposta com citações e oferece registrar a resposta de volta no wiki para que suas explorações se acumulem.
 
-## Usage
+## Uso
 
 ```
-/wiki-query "<your question>"
-/wiki-query "what does the wiki say about sparse autoencoders?"
-/wiki-query "compare monosemanticity and polysemanticity across my sources"
-/wiki-query "which sources disagree on scaling laws?"
-/wiki-query "give me a comparison table of SAE vs linear probing"
+/wiki-query "<sua pergunta>"
+/wiki-query "o que o wiki diz sobre sparse autoencoders?"
+/wiki-query "compare monosemanticity e polysemanticity nas minhas fontes"
+/wiki-query "quais fontes discordam sobre leis de escala?"
+/wiki-query "dê-me uma tabela comparativa de SAE vs linear probing"
 ```
 
-## What happens
+## O que acontece
 
-1. **Index-first read** — reads `wiki/index.md` to find relevant pages
-2. **Drill-in** — reads 3-10 pages in full (synthesis + concepts + sources + entities)
-3. **Follow links** — opportunistically follows wikilinks between pages
-4. **Fallback search** — if the index isn't enough, runs `scripts/wiki_search.py` (BM25)
-5. **Synthesize** — composes a direct answer + supporting detail + inline `[[sources/xxx]]` citations + "Related pages" section
-6. **Offer to file back** — asks whether to save this as a new wiki page (usually in `comparisons/` or `synthesis/`)
+1. **Leitura do índice primeiro** — lê `wiki/index.md` para encontrar páginas relevantes
+2. **Aprofundamento** — lê 3 a 10 páginas completas (síntese + conceitos + fontes + entidades)
+3. **Seguimento de links** — segue wikilinks entre páginas oportunisticamente
+4. **Busca fallback** — se o índice não for suficiente, executa `scripts/wiki_search.py` (BM25)
+5. **Síntese** — compõe uma resposta direta + detalhe de suporte + citações `[[sources/xxx]]` inline + seção "Páginas relacionadas"
+6. **Oferta de registro** — pergunta se deve salvar como nova página wiki (geralmente em `comparisons/` ou `synthesis/`)
 
-## Output formats
+## Formatos de saída
 
-The answer's format follows the question:
+O formato da resposta segue a pergunta:
 
-| Question shape | Output |
+| Formato da pergunta | Saída |
 |---|---|
-| "What is X?" | Markdown explanation with citations |
-| "A vs B" | Comparison table |
-| "Give me a slide deck on X" | Markdown synthesis → `/wiki-marp` to render |
-| "Chart the trend in X" | Python script + saved chart in `wiki/assets/charts/` |
+| "O que é X?" | Explicação em markdown com citações |
+| "A vs B" | Tabela comparativa |
+| "Faça um slide sobre X" | Síntese em markdown → `/wiki-marp` para renderizar |
+| "Mostre a tendência de X" | Script Python + gráfico salvo em `wiki/assets/charts/` |
 
-## Sub-agent
+## Sub-agente
 
-This command dispatches the `wiki-librarian` sub-agent. See `agents/wiki-librarian.md`.
+Este comando despacha o sub-agente `wiki-librarian`. Veja `agents/wiki-librarian.md`.
 
 ## Scripts
 
-- `engineering/llm-wiki/scripts/wiki_search.py` — BM25 fallback search
-- `engineering/llm-wiki/scripts/append_log.py` — log filed answers
+- `engineering/llm-wiki/scripts/wiki_search.py` — busca BM25 como fallback
+- `engineering/llm-wiki/scripts/append_log.py` — registra respostas arquivadas
 
-## Rules
+## Regras
 
-- **Read the index first.** No grep-everything.
-- **Every claim cites a page** with a `[[wikilink]]`.
-- **Offer to file the answer back** — but only for substantive answers worth keeping.
+- **Leia o índice primeiro.** Nada de grep em tudo.
+- **Cada afirmação cita uma página** com um `[[wikilink]]`.
+- **Ofereça registrar a resposta de volta** — mas apenas para respostas substantivas que valham ser mantidas.
 
-## Skill Reference
+## Referência de Skill
 
 → `engineering/llm-wiki/SKILL.md`
 → `engineering/llm-wiki/references/query-workflow.md`

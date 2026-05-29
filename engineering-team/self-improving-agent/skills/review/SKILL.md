@@ -1,7 +1,6 @@
 ---
 name: "review"
 description: "Analisar a auto-memória em busca de candidatos a promoção, entradas desatualizadas, oportunidades de consolidação e métricas de saúde."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

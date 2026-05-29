@@ -1,7 +1,6 @@
 ---
 name: "remember"
 description: "Salvar explicitamente conhecimento importante na auto-memória com timestamp e contexto. Use quando uma descoberta é importante demais para depender da captura automática."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

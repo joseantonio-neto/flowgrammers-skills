@@ -1,7 +1,6 @@
 ---
 name: "senior-backend"
 description: "Projeta e implementa sistemas backend incluindo REST APIs, microsserviços, arquiteturas de banco de dados, fluxos de autenticação e hardening de segurança. Use quando o usuário pedir para 'design REST APIs', 'optimize database queries', 'implement authentication', 'build microsserviços', 'review backend code', 'set up GraphQL', 'handle database migrations', ou 'load test APIs'. Cobre desenvolvimento Node.js/Express/Fastify, otimização PostgreSQL, segurança de API e padrões de arquitetura backend."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

@@ -1,146 +1,119 @@
 ---
 name: tc
-description: Track technical changes with structured records, a state machine, and session handoff. Usage: /tc <init|create|update|status|resume|close|export|dashboard> [args]
+description: Rastreia mudanças técnicas com registros estruturados, máquina de estados e handoff entre sessões. Uso: /tc <init|create|update|status|resume|close|export|dashboard> [args]
 ---
 
-# /tc — Technical Change Tracker
+# /tc — Rastreador de Mudanças Técnicas
 
-Dispatch a TC (Technical Change) command. Arguments: `$ARGUMENTS`.
+Despacha um comando de TC (Technical Change). Argumentos: `$ARGUMENTS`.
 
-If `$ARGUMENTS` is empty, print this menu and stop:
+Se `$ARGUMENTS` estiver vazio, exibe este menu e para:
 
 ```
-/tc init                       Initialize TC tracking in this project
-/tc create <name>              Create a new TC record
-/tc update <tc-id> [...]       Update fields, status, files, handoff
-/tc status [tc-id]             Show one TC or the registry summary
-/tc resume <tc-id>             Resume a TC from a previous session
-/tc close <tc-id>              Transition a TC to deployed
-/tc export                     Re-render derived artifacts
-/tc dashboard                  Re-render the registry summary
+/tc init                       Inicializa o rastreamento de TC neste projeto
+/tc create <nome>              Cria um novo registro TC
+/tc update <tc-id> [...]       Atualiza campos, status, arquivos, handoff
+/tc status [tc-id]             Exibe um TC ou o resumo do registro
+/tc resume <tc-id>             Retoma um TC de uma sessão anterior
+/tc close <tc-id>              Transiciona um TC para implantado
+/tc export                     Re-renderiza artefatos derivados
+/tc dashboard                  Re-renderiza o resumo do registro
 ```
 
-Otherwise, parse `$ARGUMENTS` as `<subcommand> <rest>` and dispatch to the matching protocol below. All scripts live at `engineering/tc-tracker/scripts/`.
+Caso contrário, analisa `$ARGUMENTS` como `<subcomando> <resto>` e despacha para o protocolo correspondente abaixo. Todos os scripts ficam em `engineering/tc-tracker/scripts/`.
 
-## Subcommands
+## Subcomandos
 
 ### `init`
 
-1. Run:
-   ```bash
-   python3 engineering/tc-tracker/scripts/tc_init.py --root . --json
-   ```
-2. If status is `already_initialized`, report current statistics and stop.
-3. Otherwise report what was created and suggest `/tc create <name>` as the next step.
+```bash
+python3 engineering/tc-tracker/scripts/tc_init.py --root . --json
+```
 
-### `create <name>`
+Se status for `already_initialized`, reporta estatísticas atuais e para. Caso contrário, reporta o que foi criado e sugere `/tc create <nome>` como próximo passo.
 
-1. Parse `<name>` as a kebab-case slug. If missing, ask the user for one.
-2. Prompt the user (one question at a time) for:
-   - Title (5-120 chars)
-   - Scope: `feature | bugfix | refactor | infrastructure | documentation | hotfix | enhancement`
-   - Priority: `critical | high | medium | low` (default `medium`)
-   - Summary (10+ chars)
-   - Motivation
-3. Run:
+### `create <nome>`
+
+1. Interpreta `<nome>` como slug em kebab-case. Se ausente, pede ao usuário.
+2. Solicita (uma pergunta por vez):
+   - Título (5–120 chars)
+   - Escopo: `feature | bugfix | refactor | infrastructure | documentation | hotfix | enhancement`
+   - Prioridade: `critical | high | medium | low` (padrão `medium`)
+   - Resumo (10+ chars)
+   - Motivação
+3. Executa:
    ```bash
    python3 engineering/tc-tracker/scripts/tc_create.py --root . \
-     --name "<slug>" --title "<title>" --scope <scope> --priority <priority> \
-     --summary "<summary>" --motivation "<motivation>" --json
+     --name "<slug>" --title "<título>" --scope <escopo> --priority <prioridade> \
+     --summary "<resumo>" --motivation "<motivação>" --json
    ```
-4. Report the new TC ID and the path to the record.
+4. Reporta o ID do novo TC e o caminho para o registro.
 
-### `update <tc-id> [intent]`
+### `update <tc-id> [intenção]`
 
-1. If `<tc-id>` is missing, list active TCs (status `in_progress` or `blocked`) from `tc_status.py --all` and ask which one.
-2. Determine the user's intent from natural language:
-   - **Status change** → `--set-status <state>` with `--reason "<why>"`
-   - **Add files** → one or more `--add-file path[:action]`
-   - **Add a test** → `--add-test "<title>" --test-procedure "<step>" --test-expected "<result>"`
-   - **Update handoff** → any combination of `--handoff-progress`, `--handoff-next`, `--handoff-blocker`, `--handoff-context`
-   - **Add a note** → `--note "<text>"`
-   - **Add a tag** → `--tag <tag>`
-3. Run:
+1. Se `<tc-id>` estiver ausente, lista TCs ativos e pergunta qual.
+2. Determina a intenção do usuário a partir de linguagem natural:
+   - **Mudança de status** → `--set-status <estado>` com `--reason "<motivo>"`
+   - **Adicionar arquivos** → `--add-file caminho[:ação]`
+   - **Adicionar teste** → `--add-test "<título>" --test-procedure "<passo>" --test-expected "<resultado>"`
+   - **Atualizar handoff** → `--handoff-progress`, `--handoff-next`, `--handoff-blocker`, `--handoff-context`
+   - **Adicionar nota** → `--note "<texto>"`
+   - **Adicionar tag** → `--tag <tag>`
+3. Executa:
    ```bash
    python3 engineering/tc-tracker/scripts/tc_update.py --root . --tc-id <tc-id> [flags] --json
    ```
-4. If exit code is non-zero, surface the error verbatim. The state machine and validator will reject invalid moves — do not retry blindly.
+4. Se código de saída não for zero, exibe o erro verbatim. Não repita cegamente.
 
 ### `status [tc-id]`
 
-- If `<tc-id>` is provided:
-  ```bash
-  python3 engineering/tc-tracker/scripts/tc_status.py --root . --tc-id <tc-id>
-  ```
-- Otherwise:
-  ```bash
-  python3 engineering/tc-tracker/scripts/tc_status.py --root . --all
-  ```
+```bash
+# Com tc-id:
+python3 engineering/tc-tracker/scripts/tc_status.py --root . --tc-id <tc-id>
+# Sem tc-id:
+python3 engineering/tc-tracker/scripts/tc_status.py --root . --all
+```
 
 ### `resume <tc-id>`
 
-1. Run:
-   ```bash
-   python3 engineering/tc-tracker/scripts/tc_status.py --root . --tc-id <tc-id> --json
-   ```
-2. Display the handoff block prominently: `progress_summary`, `next_steps` (numbered), `blockers`, `key_context`.
-3. Ask: "Resume <tc-id> and pick up at next step 1? (y/n)"
-4. If yes, run an update to record the resumption:
-   ```bash
-   python3 engineering/tc-tracker/scripts/tc_update.py --root . --tc-id <tc-id> \
-     --note "Session resumed" --reason "session handoff"
-   ```
-5. Begin executing the first item in `next_steps`. Do NOT re-derive context — trust the handoff.
+1. Executa `tc_status.py --tc-id <tc-id> --json`
+2. Exibe o bloco de handoff em destaque: `progress_summary`, `next_steps` (numerados), `blockers`, `key_context`
+3. Pergunta: "Retomar <tc-id> e continuar a partir do passo 1? (s/n)"
+4. Se sim, registra a retomada via `tc_update.py` e começa a executar o primeiro item de `next_steps`.
 
 ### `close <tc-id>`
 
-1. Read the record via `tc_status.py --tc-id <tc-id> --json`.
-2. Verify the current status is `tested`. If not, refuse and tell the user which transitions are still required.
-3. Check `test_cases`: warn if any are `pending`, `fail`, or `blocked`.
-4. Ask the user:
-   - "Who is approving? (your name, or 'self')"
-   - "Approval notes (optional):"
-   - "Test coverage status: none / partial / full"
-5. Run:
-   ```bash
-   python3 engineering/tc-tracker/scripts/tc_update.py --root . --tc-id <tc-id> \
-     --set-status deployed --reason "Approved by <approver>" --note "Approval: <approver> — <notes>"
-   ```
-   Then directly edit the `approval` block via a follow-up update if your script version supports it; otherwise instruct the user to record approval in `notes`.
-6. Report: "TC-NNN closed and deployed."
+1. Lê o registro via `tc_status.py --tc-id <tc-id> --json`
+2. Verifica se o status atual é `tested`. Se não, recusa e informa quais transições ainda são necessárias.
+3. Verifica `test_cases`: avisa se algum estiver `pending`, `fail` ou `blocked`.
+4. Pergunta: aprovador, notas de aprovação, status de cobertura de teste.
+5. Executa `tc_update.py --set-status deployed`
+6. Reporta: "TC-NNN fechado e implantado."
 
 ### `export`
 
-There is no automatic HTML export in this skill. Re-validate everything instead:
-
-1. Read the registry.
-2. For each record, run:
-   ```bash
-   python3 engineering/tc-tracker/scripts/tc_validator.py --record <path> --json
-   ```
-3. Run:
-   ```bash
-   python3 engineering/tc-tracker/scripts/tc_validator.py --registry docs/TC/tc_registry.json --json
-   ```
-4. Report: total records validated, any errors, paths to anything invalid.
+Não há exportação automática para HTML. Em vez disso:
+1. Lê o registro.
+2. Para cada registro, executa `tc_validator.py --record <caminho> --json`
+3. Executa `tc_validator.py --registry docs/TC/tc_registry.json --json`
+4. Reporta: total de registros validados, erros, caminhos de itens inválidos.
 
 ### `dashboard`
 
-Run the all-records summary:
 ```bash
 python3 engineering/tc-tracker/scripts/tc_status.py --root . --all
 ```
 
-## Iron Rules
+## Leis de Ferro
 
-1. **Never edit `tc_record.json` by hand.** Always use `tc_update.py` so revision history is appended and validation runs.
-2. **Never skip the state machine.** Walk forward through states even if it feels redundant.
-3. **Never delete a TC.** History is append-only — add a final revision and tag it `[CANCELLED]`.
-4. **Background bookkeeping.** When mid-task, spawn a background subagent to update the TC. Do not pause coding to do paperwork.
-5. **Validate before reporting success.** If a script exits non-zero, surface the error and stop.
+1. **Nunca edite `tc_record.json` manualmente.** Sempre use `tc_update.py` para que o histórico seja preservado e a validação seja executada.
+2. **Nunca pule a máquina de estados.** Avance pelos estados mesmo que pareça redundante.
+3. **Nunca exclua um TC.** O histórico é apenas de acréscimo — adicione uma revisão final e marque como `[CANCELADO]`.
+4. **Tarefas administrativas em segundo plano.** Quando estiver no meio de uma tarefa, despache um subagente em segundo plano para atualizar o TC. Não pause a codificação para burocracia.
+5. **Valide antes de reportar sucesso.** Se um script sair com código diferente de zero, exiba o erro e pare.
 
-## Related Skills
+## Skills Relacionadas
 
-- `engineering/tc-tracker` — Full SKILL.md with schema reference, lifecycle diagrams, and the handoff format.
-- `engineering/changelog-generator` — Pair with TC tracker: TCs for the per-change audit trail, changelog for user-facing release notes.
-- `engineering/tech-debt-tracker` — For tracking long-lived debt rather than discrete code changes.
+- `engineering/tc-tracker` — SKILL.md completo com referência de esquema, diagramas de ciclo de vida e formato de handoff
+- `engineering/changelog-generator` — Par com o TC tracker: TCs para trilha de auditoria por mudança, changelog para notas de lançamento voltadas ao usuário
+- `engineering/tech-debt-tracker` — Para rastrear dívida de longa duração em vez de mudanças de código discretas

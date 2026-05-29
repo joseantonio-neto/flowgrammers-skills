@@ -2,7 +2,6 @@
 name: "business-growth-skills"
 description: "4 skills de crescimento de negócios para Claude Code. Customer Success (health scoring, prevenção de churn), Sales Engineer (análise de RFP), Revenue Operations (pipeline, GTM), Contract & Proposal Writer (propostas e contratos). Ferramentas Python (apenas stdlib)."
 version: 1.1.0
-author: Ric Neves - Flowgrammers
 license: MIT
 tags:
   - business

@@ -4,7 +4,6 @@ description: "Revisão de código adversarial que quebra a monocultura de auto-r
 tier: "STANDARD"
 category: "Engineering / Code Quality"
 dependencies: "None (prompt-only, no external tools required)"
-author: Ric Neves - Flowgrammers
 version: "1.0.0"
 license: "MIT"
 agents:

@@ -1,7 +1,6 @@
 ---
 name: "gcp-cloud-architect"
 description: "Projete arquiteturas GCP para startups e empresas. Use ao projetar infraestrutura Google Cloud, implantar no GKE ou Cloud Run, configurar pipelines BigQuery, otimizar custos GCP ou migrar para GCP. Cobre Cloud Run, GKE, Cloud Functions, Cloud SQL, BigQuery e otimização de custos."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

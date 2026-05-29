@@ -1,7 +1,6 @@
 ---
 name: meeting-analyzer
 description: Analisa transcrições e gravações de reuniões para identificar padrões comportamentais, antipadrões de comunicação e feedback de coaching acionável. Use esta skill sempre que o usuário fizer upload ou apontar para transcrições de reuniões (.txt, .md, .vtt, .srt, .docx), perguntar sobre seus hábitos de comunicação, quiser feedback sobre como conduz reuniões, solicitar análise de proporção de fala, mencionar palavras de preenchimento ou evitação de conflitos, ou quiser comparar sua comunicação ao longo do tempo. Acione também quando os usuários mencionarem ferramentas como Granola, Otter, Fireflies ou transcrições do Zoom. Mesmo que o usuário apenas diga "olhe minhas reuniões" ou "como me apresento nas reuniões" — use esta skill.
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

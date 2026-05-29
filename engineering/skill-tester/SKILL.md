@@ -1,7 +1,6 @@
 ---
 name: "skill-tester"
 description: "Testador de Skills — meta-skill para validar, testar e pontuar a qualidade de skills dentro do ecossistema claude-skills. Use para garantir conformidade estrutural, testar scripts Python e realizar avaliação de qualidade multidimensional com notas e recomendações de melhoria."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

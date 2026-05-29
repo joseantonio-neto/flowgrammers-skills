@@ -1,7 +1,6 @@
 ---
 name: prompt-governance
 description: "Use quando gerenciar prompts em produção em escala: versionamento de prompts, execução de testes A/B em prompts, construção de registros de prompts, prevenção de regressões de prompts ou criação de pipelines de avaliação para features de IA em produção. Gatilhos: 'gerenciar prompts em produção', 'versionamento de prompts', 'regressão de prompts', 'teste A/B de prompts', 'registro de prompts', 'pipeline de avaliação'. NÃO para escrever ou melhorar prompts individuais (use senior-prompt-engineer). NÃO para design de pipeline RAG (use rag-architect). NÃO para redução de custos de LLM (use llm-cost-optimizer)."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

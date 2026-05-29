@@ -1,7 +1,6 @@
 ---
 name: "observability-designer"
 description: "Designer de Observabilidade (PODEROSO). Projeta estratégias abrangentes de observabilidade para sistemas em produção, incluindo frameworks SLI/SLO, otimização de alertas e geração de painéis."
-author: Ric Neves - Flowgrammers
 agents:
   - claude-code
 ---

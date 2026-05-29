@@ -1,40 +1,40 @@
 ---
 name: persona
-description: Generate data-driven user personas for UX research and product design. Usage: /persona generate [options]
+description: Gera personas de usuário baseadas em dados para pesquisa de UX e design de produto. Uso: /persona generate [opções]
 ---
 
 # /persona
 
-Generate structured user personas with demographics, goals, pain points, and behavioral patterns.
+Gera personas de usuário estruturadas com dados demográficos, objetivos, pontos de dor e padrões comportamentais.
 
-## Usage
+## Uso
 
 ```
-/persona generate                                            Generate persona (interactive)
-/persona generate json                                       Generate persona as JSON
+/persona generate                                            Gera persona (interativo)
+/persona generate json                                       Gera persona em formato JSON
 ```
 
-## Input Format
+## Formato de Entrada
 
-Interactive mode prompts for product context. Alternatively, provide context inline:
+O modo interativo solicita o contexto do produto. Alternativamente, forneça o contexto diretamente:
 
 ```
 /persona generate
-> Product: B2B project management tool
-> Target: Engineering managers at mid-size companies
-> Key problem: Cross-team visibility
+> Produto: Ferramenta de gestão de projetos B2B
+> Público-alvo: Gerentes de engenharia em empresas de médio porte
+> Problema principal: Visibilidade entre times
 ```
 
-## Examples
+## Exemplos
 
 ```
 /persona generate
 /persona generate json
-/persona generate json > persona-eng-manager.json
+/persona generate json > persona-gerente-eng.json
 ```
 
 ## Scripts
-- `product-team/ux-researcher-designer/scripts/persona_generator.py` — Persona generator (positional `json` arg for JSON output)
+- `product-team/ux-researcher-designer/scripts/persona_generator.py` — Gerador de persona (argumento posicional `json` para saída JSON)
 
-## Skill Reference
+## Referência de Skill
 > `product-team/ux-researcher-designer/SKILL.md`
