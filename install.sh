@@ -19,6 +19,12 @@ NC='\033[0m'
 SKILLS_DIR="$HOME/.claude/skills"
 COMMANDS_DIR="$HOME/.claude/commands"
 
+# Detectar modo pipe (curl|bash) cedo
+IS_PIPE=false
+if [ -z "${BASH_SOURCE[0]:-}" ] || [ "${BASH_SOURCE[0]}" = "bash" ]; then
+  IS_PIPE=true
+fi
+
 # Banner
 echo ""
 echo -e "${CYAN}${BOLD}"
@@ -54,11 +60,14 @@ else
   echo -e "  ${YELLOW}⚠${NC}  Claude Code não encontrado no PATH"
   echo -e "     Para instalar: ${CYAN}npm install -g @anthropic-ai/claude-code${NC}"
   echo ""
-  printf "  Continuar mesmo assim? (s/N): " > /dev/tty
-  read CONTINUE < /dev/tty 2>/dev/null || CONTINUE=""
-  if [[ ! "$CONTINUE" =~ ^[Ss]$ ]]; then
-    echo -e "  ${RED}Instalação cancelada.${NC}"
-    exit 1
+  if [ "$IS_PIPE" = true ]; then
+    echo -e "  ${YELLOW}Continuando sem Claude Code...${NC}"
+  else
+    read -p "  Continuar mesmo assim? (s/N): " CONTINUE
+    if [[ ! "$CONTINUE" =~ ^[Ss]$ ]]; then
+      echo -e "  ${RED}Instalação cancelada.${NC}"
+      exit 1
+    fi
   fi
 fi
 
@@ -103,11 +112,19 @@ echo -e "  📄 CLAUDE.md global:    ${CYAN}mantido intacto${NC}"
 echo ""
 echo "────────────────────────────────────────────────────"
 echo ""
-printf "  Confirmar instalação? (S/n): " > /dev/tty
-read CONFIRM < /dev/tty 2>/dev/null || CONFIRM=""
-if [[ "$CONFIRM" =~ ^[Nn]$ ]]; then
-  echo -e "  ${YELLOW}Instalação cancelada.${NC}"
-  exit 0
+if [ "$IS_PIPE" = true ]; then
+  echo -e "  ${YELLOW}Pressione Ctrl+C para cancelar.${NC} Instalando em:"
+  for i in 5 4 3 2 1; do
+    printf "  %s..." "$i"
+    sleep 1
+  done
+  echo ""
+else
+  read -p "  Confirmar instalação? (S/n): " CONFIRM
+  if [[ "$CONFIRM" =~ ^[Nn]$ ]]; then
+    echo -e "  ${YELLOW}Instalação cancelada.${NC}"
+    exit 0
+  fi
 fi
 
 echo ""
