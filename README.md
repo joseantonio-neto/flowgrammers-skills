@@ -378,6 +378,58 @@ Decompõe um PRD em specs executáveis para subagentes paralelos no Claude Code.
 
 ---
 
+### PM Flow Skills (`pm-flow-skills/`) — 27 slash commands de Product Management
+
+Kit completo de PM cobrindo todo o ciclo de produto: da ideia vaga ao produto escalado. Baseado nos frameworks de Teresa Torres (OST), Ash Maurya (Lean Canvas), Sean Ellis (PMF), Rob Fitzpatrick (Mom Test), Marty Cagan (Dual-Track) e Lenny Rachitsky (OKRs + Growth).
+
+#### Jornada 0→1: Da ideia ao Product-Market Fit
+
+```
+Fase 1: Problem Discovery → /persona  /discovery  /customer-journey
+Fase 2: Problem Validation → /lean-canvas  /competitive-analysis  /hypothesis
+Fase 3: Solution Discovery → /opportunity-tree  /experiment-design  /hypothesis
+Fase 4: Solution Validation → /ab-test-analysis  /measure-pmf
+Fase 5: MVP Spec & Build → /prd  /user-stories  /pre-mortem
+Fase 6: Launch & Traction → /launch-checklist  /gtm  /north-star
+Fase 7: Product-Market Fit → /measure-pmf  /interview-synthesis  /stakeholder-update
+```
+
+#### Jornada 1→100: Do PMF ao scale
+
+```
+Fase 8: Growth Engine → /north-star  /okr  /experiment-design  /ab-test-analysis
+Fase 9: Scaling & Expansion → /pricing  /ideal-customer-profile  /battlecard  /roadmap
+Fase 10: Optimization & Moat → /strategy  /competitive-analysis  /okr  /stakeholder-update
+Fase 11: Maturity & Reinvention → /strategy  /discovery  /lean-canvas  /prioritize
+```
+
+#### 27 commands por domínio
+
+| Domínio | Commands | Quando usar |
+|---------|---------|-------------|
+| **Discovery** (7) | `/persona` `/discovery` `/interview-synthesis` `/competitive-analysis` `/opportunity-tree` `/hypothesis` `/customer-journey` | Entender o problema e o mercado |
+| **Delivery** (3) | `/prd` `/user-stories` `/acceptance-criteria` | Especificar a solução |
+| **Strategy** (7) | `/prioritize` `/strategy` `/roadmap` `/okr` `/lean-canvas` `/pricing` `/north-star` | Priorizar, planejar e alinhar |
+| **Validation** (3) | `/experiment-design` `/measure-pmf` `/ab-test-analysis` | Testar e medir |
+| **Execution** (2) | `/pre-mortem` `/launch-checklist` | Preparar e proteger o lançamento |
+| **GTM** (5) | `/release-notes` `/stakeholder-update` `/gtm` `/battlecard` `/ideal-customer-profile` | Comunicar e ir ao mercado |
+
+#### Workflows prontos (combos de skills)
+
+| Workflow | Skills |
+|----------|--------|
+| Customer Discovery | `/persona` → `/discovery` → `/interview-synthesis` → `/opportunity-tree` |
+| Feature Kickoff | `/hypothesis` → `/prd` → `/user-stories` → `/acceptance-criteria` |
+| Product Strategy | `/competitive-analysis` → `/strategy` → `/okr` → `/roadmap` → `/stakeholder-update` |
+| Validate & Launch | `/experiment-design` → `/pre-mortem` → `/launch-checklist` → `/gtm` |
+| Pricing & GTM | `/pricing` → `/ideal-customer-profile` → `/battlecard` → `/gtm` |
+| Growth Sprint | `/north-star` → `/experiment-design` → `/ab-test-analysis` → `/okr` |
+| Board Update | `/measure-pmf` → `/stakeholder-update` → `/roadmap` |
+
+Veja tutoriais completos em `pm-flow-skills/tutorial/` e templates preenchíveis em `pm-flow-skills/templates/`.
+
+---
+
 ### Domínios Originais
 
 #### C-Level Advisory (`c-level-advisor/`) — 37 skills
@@ -419,24 +471,57 @@ Controller BR, FP&A, SaaS Metrics · ISO 13485, LGPD, ANVISA/FDA, ISO 27001, SOC
 
 ## Comandos Slash Disponíveis
 
+**54 comandos no total** — 30 originais Flowgrammers + 24 novos PM Flow Skills.
+
+### PM Flow Skills (27 comandos de Product Management)
+
 | Comando | O que faz |
 |---------|-----------|
-| `/prd` | Gera um Product Requirements Document completo |
-| `/tdd` | Inicia workflow de Test-Driven Development |
+| `/discovery` | Ciclo de descoberta: framing → hipóteses → plano de experimentos |
+| `/persona` | Personas com JTBD, behaviors, pain points e citações reais |
+| `/opportunity-tree` | Opportunity Solution Tree de Teresa Torres |
+| `/hypothesis` | Hipóteses testáveis com kill criteria e métricas |
+| `/customer-journey` | Jornada do cliente em 7 estágios com emoções e pain points |
+| `/interview-synthesis` | Síntese de entrevistas em padrões, JTBD e recomendações |
+| `/competitive-analysis` | Mapa competitivo com gaps de diferenciação |
+| `/prd` | PRD completo em 8 seções com exemplos detalhados |
+| `/user-stories` | User stories INVEST com critérios de aceite |
+| `/acceptance-criteria` | Given/When/Then para happy path + edge cases |
+| `/prioritize` | RICE scoring com trade-offs e recomendação |
+| `/strategy` | Strategy canvas com 9 seções |
+| `/roadmap` | Roadmap trimestral com fases e dependências |
+| `/okr` | OKRs cascateados (empresa → time) com 9 princípios Lenny |
+| `/lean-canvas` | Lean Canvas de Ash Maurya (9 blocos) |
+| `/pricing` | 7 modelos de pricing + willingness-to-pay |
+| `/north-star` | North Star Metric + 3-5 input metrics |
+| `/experiment-design` | Design de pretotypes e A/B tests (XYZ hypothesis) |
+| `/measure-pmf` | Product-Market Fit (Sean Ellis 40% + retenção) |
+| `/ab-test-analysis` | Análise estatística de resultados de A/B test |
+| `/pre-mortem` | Risk analysis (Tigers / Paper Tigers / Elephants) |
+| `/launch-checklist` | Checklist cross-functional para lançamento |
+| `/release-notes` | Release notes orientadas a benefício |
+| `/stakeholder-update` | Status executivo: situação → análise → recomendação |
+| `/gtm` | Go-to-market completo com canais, mensagens e métricas |
+| `/battlecard` | Battlecard competitiva para vendas |
+| `/ideal-customer-profile` | ICP detalhado com demographics, behaviors e JTBD |
+
+### Comandos Originais Flowgrammers
+
+| Comando | O que faz |
+|---------|-----------|
+| `/prd` | PRD via Flowgrammers generator (9 seções + Mermaid + SQL) |
+| `/tdd` | Workflow de Test-Driven Development |
 | `/sprint-plan` | Planejamento de sprint com estimativas |
 | `/saas-health` | Dashboard de métricas SaaS (ARR, MRR, Churn) |
 | `/tech-debt` | Inventário e priorização de dívida técnica |
-| `/okr` | Criação e revisão de OKRs |
 | `/retro` | Facilitação de retrospectiva ágil |
 | `/code-to-prd` | Gera PRD a partir de código existente |
 | `/financial-health` | Análise de saúde financeira |
-| `/user-story` | Geração de user stories com critérios de aceite |
 | `/rice` | Priorização RICE de features |
 | `/a11y-audit` | Auditoria de acessibilidade WCAG 2.2 |
-| `/persona` | Geração de personas baseadas em dados |
 | `/security-review` | Review de segurança de código |
 | `/changelog` | Geração de changelog conventional commits |
-| E mais 14 comandos... | |
+| E mais... | `/sprint-health` `/karpathy-check` `/focused-fix` `/pipeline` `/project-health` `/user-story` `/google-workspace` `/plugin-audit` `/deep-research` `wiki-*` |
 
 ---
 

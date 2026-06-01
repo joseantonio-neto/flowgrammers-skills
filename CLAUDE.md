@@ -67,6 +67,27 @@ Carregue via `/skill` ou inclua no contexto do sistema
 | SDD Generator | `sdd-generator/` | Decompõe PRD em specs executáveis para subagentes paralelos |
 | Segurança MVS | `seguranca-mvs/` | CISO virtual sênior — análise 360° de segurança mínima viável (LGPD, hardening, AppSec, IR) |
 
+### PM Flow Skills — Slash Commands de Product Management
+
+27 slash commands cobrindo o ciclo completo de PM em 6 domínios. Baseados nos frameworks de Teresa Torres, Ash Maurya, Sean Ellis, Rob Fitzpatrick, Marty Cagan e Lenny Rachitsky.
+
+| Domínio | Commands |
+|---------|---------|
+| **Discovery** (7) | `/persona` `/discovery` `/interview-synthesis` `/competitive-analysis` `/opportunity-tree` `/hypothesis` `/customer-journey` |
+| **Delivery** (3) | `/prd` `/user-stories` `/acceptance-criteria` |
+| **Strategy** (7) | `/prioritize` `/strategy` `/roadmap` `/okr` `/lean-canvas` `/pricing` `/north-star` |
+| **Validation** (3) | `/experiment-design` `/measure-pmf` `/ab-test-analysis` |
+| **Execution** (2) | `/pre-mortem` `/launch-checklist` |
+| **GTM** (5) | `/release-notes` `/stakeholder-update` `/gtm` `/battlecard` `/ideal-customer-profile` |
+
+**Workflows prontos:**
+- Customer Discovery: `/persona` → `/discovery` → `/interview-synthesis` → `/opportunity-tree`
+- Feature Kickoff: `/hypothesis` → `/prd` → `/user-stories` → `/acceptance-criteria`
+- Product Strategy: `/competitive-analysis` → `/strategy` → `/okr` → `/roadmap` → `/stakeholder-update`
+- Validate & Launch: `/experiment-design` → `/pre-mortem` → `/launch-checklist` → `/gtm`
+
+Tutoriais: `pm-flow-skills/tutorial/` · Templates: `pm-flow-skills/templates/`
+
 ---
 
 ## Exemplos Rápidos
