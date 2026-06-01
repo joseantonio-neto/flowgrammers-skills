@@ -580,6 +580,13 @@ Skills da comunidade Flowgrammers para o mercado brasileiro.
 - Licença: [MIT](LICENSE)
 - Repositório: [github.com/ricardonevesbraga/flowgrammers-skills](https://github.com/ricardonevesbraga/flowgrammers-skills)
 
+### Créditos
+
+| Contribuição | Autor |
+|---|---|
+| Flowgrammers Skills (401 skills, domínios, install) | [@ricardonevesbraga](https://github.com/ricardonevesbraga) |
+| PM Flow Skills (27 slash commands de PM) | [@lucasgaravelli](https://github.com/lucasgaravelli) |
+
 ## Contribuindo
 
 Quer sugerir uma skill nova, corrigir algo, ou adicionar um perfil? Veja [CONTRIBUTING.md](CONTRIBUTING.md).
